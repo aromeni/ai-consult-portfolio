@@ -1,0 +1,6 @@
+streamlit
+pandas
+pytest
+matplotlib
+reportlab
+python-pptx

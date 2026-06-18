@@ -1,0 +1,9 @@
+# Generated outputs — do not commit unless intentional sample assets
+outputs/reports/*.pdf
+outputs/reports/*.pptx
+outputs/charts/*.png
+outputs/training_packs/*.pdf
+outputs/training_packs/*.pptx
+
+# Keep folder placeholders
+!outputs/**/.gitkeep

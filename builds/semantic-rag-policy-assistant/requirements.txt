@@ -1,0 +1,7 @@
+streamlit
+pandas
+numpy<2
+sentence-transformers>=2.7,<4
+transformers>=4.36,<5
+faiss-cpu
+pytest
