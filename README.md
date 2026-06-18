@@ -27,8 +27,8 @@ Each build maps to a distinct phase of an AI adoption consulting engagement. Tog
 ## Quick Start — Run All Nine Builds
 
 ```bash
-git clone https://github.com/your-username/rashid-ai-consult-portfolio
-cd rashid-ai-consult-portfolio
+git clone https://github.com/aromeni/ai-consult-portfolio
+cd ai-consult-portfolio
 bash launch_all.sh
 ```
 
@@ -113,7 +113,7 @@ For a guided walkthrough, timing guide, and audience-specific talking points, se
 
 Rashid AI Consult provides structured AI adoption consulting for UK organisations. The service covers every phase of responsible AI adoption — from initial workflow diagnosis and governance review through to staff training, impact measurement, and tracked implementation delivery.
 
-**Contact:** [your email here]
+**Contact:** aromeni@gmail.com
 
 ---
 
