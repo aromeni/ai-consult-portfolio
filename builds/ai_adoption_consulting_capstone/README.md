@@ -1,261 +1,301 @@
 # Build 9 — AI Adoption Consulting Capstone Dashboard
 
-## Purpose
+Build 9 is the capstone wrapper for the AI adoption consulting portfolio. It connects the previous builds into one end-to-end consulting journey and packages the result as a dashboard, report, and evidence pack.
 
-Build 9 is the AI adoption consulting capstone dashboard. It connects the outputs of Builds 1–8 into a single client-facing portfolio view, showing how a consultant moves an organisation from initial readiness diagnosis through to tracked implementation delivery.
+---
 
-Build 9 does not rebuild the previous tools. It summarises and connects them into one coherent consulting journey:
+## Overview
 
-```text
-Readiness → Document Intelligence → Staff Training → Consulting Report → Governance → ROI/Impact → Delivery Tracking → Capstone Summary
-```
+Build 9 is a Streamlit dashboard that aggregates synthetic evidence from Builds 1–8 — the seven AI adoption consulting tools built throughout this portfolio — into one structured client-facing view. It produces a consulting report, a recommendation pathway, and downloadable evidence in five formats.
 
-It exists to show a reviewer, prospective client, or collaborator how the separate portfolio builds work as one commercially coherent AI adoption consulting service rather than as isolated demonstrations.
+Everything is built with deterministic Python logic and synthetic data. No external AI APIs, no real client data, no database, no authentication.
 
-## Repository Location and Naming
+**172 automated tests, all passing.**
 
-Build 9 is stored at `10-builds/ai_adoption_consulting_capstone`. The folder name follows the repository's numbered-build structure and uses underscores for a safe Python project path. The product name remains **Build 9 — AI Adoption Consulting Capstone Dashboard**.
+---
 
-## How Build 9 Fits the Portfolio
+## Why This Build Exists
+
+Most AI consulting portfolios demonstrate individual capabilities: a readiness tool here, a governance checker there. What they rarely show is how those tools connect into one coherent consulting story — how a consultant actually moves a client organisation from initial diagnosis to governed implementation to commercial outcome.
+
+Build 9 answers that question. It shows:
+
+- How evidence from eight different consulting tools becomes one picture of a client's AI adoption position.
+- How that picture translates into a consulting recommendation and a commercial next step.
+- How the result is packaged as a report, a dashboard, and an evidence pack — the actual deliverables of a consulting engagement.
+
+---
+
+## How It Connects Builds 1–8
 
 | Build | Tool | What Build 9 Draws On |
-| --- | --- | --- |
-| Build 1 | AI Readiness / Workflow Audit Tool | Readiness findings and workflow priority identification |
+|---|---|---|
+| Build 1 | AI Readiness + Workflow Audit Tool | Readiness findings and workflow priority identification |
 | Build 2/3 | Document Intelligence / Semantic RAG | Document handling capability and retrieval demonstration |
-| Build 4 | AI Staff Training and Workshop Generator | Training delivery, workshop design, and staff confidence |
+| Build 4 | AI Staff Training + Workshop Generator | Training delivery, workshop design, and staff confidence |
 | Build 5 | AI Consulting Report Generator | Structured consulting report and client-facing recommendations |
 | Build 6 | AI Governance Policy Checker | Governance maturity, policy gaps, and control readiness |
 | Build 7 | AI Adoption ROI and Impact Tracker | ROI evidence, workflow impact, and adoption decisions |
 | Build 8 | AI Adoption Delivery and Implementation Tracker | Implementation actions, blockers, and delivery progress |
 
-## Phase 1 Scope
+Each build appears in Build 9 as a journey stage, a cross-build evidence row, a column in the CSV export, and a section of the JSON evidence pack.
 
-Phase 1 creates the Streamlit scaffold and synthetic capstone client data. It prepares:
+---
 
-- Three synthetic capstone client organisations.
-- Twenty-one cross-build journey stages connecting each client to Builds 1–8.
-- Three capstone portfolio indicators summarising each client's position.
-- Validation logic for all capstone data.
-- Phase 1 summary metrics.
-- A Streamlit Phase 1 page displaying all data with a validation summary.
+## Key Features
 
-Phase 1 does not include advanced scoring, aggregated build outputs, charts, exports, or a consulting recommendation pathway. These are added in Phases 2–8.
+| Feature | Page |
+|---|---|
+| Three synthetic client organisations with 21 cross-build journey stages | 1 — Capstone Client Setup |
+| Deterministic journey health engine (Strong / Healthy / Developing / Needs Review / Blocked) | 2 — Client Journey Overview |
+| Cross-build evidence aggregator with client-build status matrix | 3 — Cross-Build Insight Aggregator |
+| Capstone readiness classification and commercial next step selection | 4 — Consulting Recommendation Pathway |
+| Unified dashboard with Client Spotlight and three summary tables | 5 — Capstone Dashboard |
+| Structured Markdown capstone report at portfolio or client scope | 6 — Capstone Report Builder |
+| Five export formats: Markdown, CSV, JSON, PDF, PNG | 7 — Export Centre |
+| Completion summary, limitations, and commercial positioning | 8 — Final Review |
 
-## Phase 2 — Client Journey Overview Engine
+---
 
-Phase 2 adds a deterministic client journey overview engine that analyses each synthetic client across the full AI adoption pathway.
+## Demo Flow
 
-Phase 2 provides:
+The recommended demo order follows the Streamlit sidebar navigation:
 
-- **Stage completion rate** — percentage of journey stages with a status of Completed.
-- **Average evidence score** — numeric average of evidence strength across all stages using a four-level scale (Weak → Very strong).
-- **Journey health classification** — Blocked journey, Needs review, Developing journey, Healthy journey, or Strong journey.
-- **Weakest-stage identification** — the journey stage with the lowest combined status and evidence score.
-- **Next journey step** — deterministic guidance on what to address first across each client's journey.
-- **Client-level journey summaries** — one structured summary per client combining all journey metrics.
-- **Journey health summary** — counts of clients by journey health across the portfolio.
-- **Prioritised client review list** — clients sorted by review urgency, with blocked and needs-review clients appearing first.
-- **Deterministic journey recommendations** — one recommendation per client based on journey health.
+1. **Capstone Client Setup** — show the three synthetic clients, 21 journey stages, and portfolio indicators
+2. **Client Journey Overview** — show journey health, completion rate, evidence score, and prioritised client review
+3. **Cross-Build Insight Aggregator** — show build-area evidence health and the client-build status matrix
+4. **Consulting Recommendation Pathway** — show capstone readiness classification and commercial next step
+5. **Capstone Dashboard** — show the unified view with Client Spotlight and summary tables
+6. **Capstone Report Builder** — generate a portfolio-level or client-scoped consulting report
+7. **Export Centre** — download Markdown, CSV, JSON, PDF, and PNG evidence
+8. **Final Review** — close with completion status and limitations
 
-## Phase 3 — Cross-Build Insight Aggregator
+Allow 8–12 minutes for a business audience. See `portfolio_notes/build_9_demo_walkthrough.md` for a full presenter script, talking points, and suggested audience adaptation.
 
-Phase 3 adds a cross-build insight aggregator that analyses the seven build areas across all synthetic clients and produces a portfolio-level view of where the consulting evidence is strongest and where gaps remain.
+---
 
-Phase 3 provides:
+## Screenshots
 
-- **Build-level evidence summaries** — one structured summary per build area covering stage counts, completion rate, average evidence score, evidence health, and build gap.
-- **Build completion rate** — percentage of client journey stages marked Completed for each build area.
-- **Average evidence scoring** — numeric average of evidence strength across all client stages for a build, using a four-level scale (Weak → Very strong).
-- **Build evidence health classification** — Very strong evidence, Strong evidence, Developing evidence, Weak evidence, or No evidence.
-- **Build gap identification** — deterministic text explaining the current gap status for each build area.
-- **Strongest and weakest build areas** — identifies which build is producing the strongest portfolio evidence and which needs most attention.
-- **Prioritised build improvement list** — build areas sorted by improvement priority, with weakest and missing evidence areas appearing first.
-- **Client-build status matrix** — one row per client showing stage status across all seven build areas at a glance.
-- **Deterministic cross-build recommendations** — one recommendation per build area based on evidence health.
+Screenshots should be captured manually from the Streamlit app and saved in the `screenshots/` folder using the filenames listed below.
 
-## Phase 4 — Consulting Recommendation Pathway
+| File | Page | What It Shows |
+|---|---|---|
+| `01-capstone-client-setup.png` | 1 — Capstone Client Setup | Synthetic client table, journey stages, and portfolio indicators |
+| `02-client-journey-overview.png` | 2 — Client Journey Overview | Journey health classification and prioritised review table |
+| `03-cross-build-insight-aggregator.png` | 3 — Cross-Build Insight Aggregator | Build-area evidence health and client-build status matrix |
+| `04-consulting-recommendation-pathway.png` | 4 — Consulting Recommendation Pathway | Capstone readiness and commercial next step per client |
+| `05-capstone-dashboard.png` | 5 — Capstone Dashboard | Unified dashboard with Client Spotlight |
+| `06-capstone-report-builder.png` | 6 — Capstone Report Builder | Rendered Markdown consulting report |
+| `07-export-centre.png` | 7 — Export Centre | Download buttons for all five export formats |
+| `08-final-review-commercial-positioning.png` | 8 — Final Review | Completion status and limitations |
 
-Phase 4 adds a consulting recommendation pathway that converts each client's capstone journey evidence into a structured consulting decision and commercial next step.
+See `screenshots/README.md` for detailed capture instructions per screenshot.
 
-Phase 4 provides:
+---
 
-- **Capstone readiness classification** — Capstone ready, Nearly ready, Needs strengthening, or Not ready, based on journey health, completion rate, and evidence score.
-- **Consulting pathway selection** — deterministic pathway assignment per client: Ready for capstone presentation, Prepare client-facing follow-up, Strengthen weak evidence, Complete missing journey stages, or Run focused improvement sprint.
-- **Commercial next-step selection** — one commercial option per client based on journey health, including Portfolio demonstration, Paid implementation review, Governance improvement sprint, Training and adoption support package, Document intelligence upgrade, or Delivery tracking retainer.
-- **Primary improvement area** — identifies the weakest journey stage as the immediate focus for consulting effort.
-- **Recommendation priority** — High, Medium, or Low based on journey health, for triage across the client portfolio.
-- **Recommendation pathway summary** — counts of clients by readiness and priority across the portfolio.
-- **Prioritised recommendations** — clients sorted by recommendation priority, then completion rate, then evidence score.
-- **Deterministic consulting recommendation text** — one plain-English recommendation per client based on capstone readiness.
-- **Recommendation pathway matrix** — simplified one-row-per-client view of pathway decisions for dashboard display.
+## Export Formats
 
-## Synthetic Data Only
+The Export Centre (page 7) provides all of the following:
 
-Every organisation, stage, indicator, and evidence record is fictional. Do not add real client data, personal data, learner data, safeguarding data, HR data, confidential data, or regulated information.
+| Format | Content | Use Case |
+|---|---|---|
+| Markdown (`.md`) | Full capstone report at portfolio or client scope | Copy into a proposal, client document, or portfolio |
+| CSV (`.csv`) | Flat evidence table, one row per client/build stage | Review in spreadsheet, share with stakeholders |
+| JSON (`.json`) | Structured evidence pack with all capstone data | Structured record, future integration |
+| PDF (`.pdf`) | Formatted consulting report ready for email | Client leave-behind after a discovery meeting |
+| PNG (`.png`) | Capstone readiness bar chart | Slide deck, presentation, LinkedIn post |
 
-The build uses deterministic Python logic only. It does not use OpenAI, Claude, LangChain, LlamaIndex, or any external LLM API.
+All exports are generated from synthetic demonstration data.
 
-## Core Features
-
-- Three synthetic capstone client organisations.
-- Twenty-one cross-build journey stages across Builds 1–8.
-- Three capstone portfolio indicators.
-- Positive, mixed, and review-needed demonstration states.
-- Client journey health, completion, evidence, and weakest-stage analysis.
-- Cross-build evidence aggregation and prioritised improvement areas.
-- Consulting pathways, commercial next steps, and capstone readiness.
-- Portfolio and selected-client dashboards.
-- Portfolio-level and correctly scoped client-level reports.
-- Markdown, CSV, JSON, PDF, and PNG exports.
-- Eight-page Streamlit reviewer journey and a complete automated test suite.
-
-## Phase 5 — Capstone Dashboard UI
-
-Phase 5 adds a unified capstone dashboard that brings together the outputs of Phases 1–4 into one coherent Streamlit experience.
-
-Phase 5 provides:
-
-- **Portfolio dashboard context** — a single combined context object that assembles all Phase 1–4 outputs for the portfolio-level dashboard.
-- **Client dashboard context** — a per-client context combining stages, indicator, journey summary, and recommendation summary in one place.
-- **Dashboard status classification** — Strong capstone dashboard, Portfolio-ready dashboard, Developing dashboard, or Needs review, based on capstone readiness, journey health, and evidence strength.
-- **Dashboard focus** — deterministic text directing consulting attention to the most important action, based on evidence and journey health.
-- **Headline metrics** — eight dashboard metrics covering client count, build area count, capstone readiness counts, journey health counts, and evidence health counts.
-- **Client spotlight** — a Streamlit selectbox for choosing a client and displaying their full consulting profile: organisation, sector, stage, journey health, capstone readiness, commercial next step, improvement area, and recommendation priority.
-- **Client journey table** — one row per client showing journey health, completion rate, average evidence score, weakest stage, and next journey step.
-- **Cross-build evidence table** — one row per build area showing evidence health, completion rate, and build gap.
-- **Recommendation pathway table** — one row per client showing capstone readiness, consulting pathway, commercial next step, and priority.
-
-## Phase 6 — Capstone Report Builder
-
-Phase 6 adds a deterministic Markdown capstone report builder that converts all Phase 1–5 outputs into a structured consulting report.
-
-Phase 6 provides:
-
-- **Portfolio-level capstone report** — one complete Markdown report covering all three synthetic clients and all seven build areas.
-- **Client-level capstone report** — a scoped report covering one client's journey, evidence, and recommendation pathway.
-- **Executive summary** — concise bullet-point summary: client count, total stages, completed stages, strongest and weakest build areas, portfolio readiness, and recommended next step.
-- **Client overview section** — table of organisation name, sector, staff count, capstone stage, primary AI goal, and consulting priority.
-- **Capstone snapshot section** — dashboard status, dashboard focus, strongest and weakest build areas, and recommended next step.
-- **AI adoption journey section** — table of journey health, completion rate, average evidence score, weakest stage, and next journey step per client.
-- **Cross-build evidence section** — table of all seven build areas with evidence health, completion rate, build gap, and cross-build recommendation.
-- **Consulting recommendation pathway section** — table of capstone readiness, consulting pathway, commercial next step, improvement area, priority, and consulting recommendation per client.
-- **Consulting interpretation** — deterministic narrative connecting Builds 1–8 into one consulting story.
-- **Next steps section** — one deterministic bullet per client based on capstone readiness classification.
-
-## Phase 7 — Export Centre and Portfolio Evidence Pack
-
-Phase 7 adds an Export Centre that packages the capstone dashboard and report outputs into reusable portfolio evidence formats.
-
-Phase 7 provides:
-
-- **Markdown capstone report export** — full capstone report as a downloadable plain-text Markdown file, scoped to portfolio-level or one client.
-- **CSV capstone evidence export** — flat evidence table with one row per client/build stage combination, including journey stage, status, evidence strength, readiness indicators, and consulting recommendation.
-- **JSON portfolio evidence pack** — structured JSON file containing all capstone data, phase summaries, journey summaries, cross-build summaries, consulting recommendations, and dashboard snapshot.
-- **Portfolio evidence summary** — structured summary dict covering client count, stage count, evidence counts, capstone readiness breakdown, strongest and weakest build areas, and dashboard status.
-- **Portfolio evidence summary text** — concise Markdown narrative covering what Build 9 does, synthetic data disclaimer, Builds 1–8 evidence summary, capstone readiness position, and recommended next step.
-- **PDF export** — basic PDF generated from the Markdown report using reportlab, declared in `requirements.txt`.
-- **PNG chart export** — simple capstone readiness bar chart generated using matplotlib, declared in `requirements.txt`.
-- **Streamlit Export Centre page** — download buttons for all formats, portfolio evidence metrics, report scope selector, evidence summary text preview, and consulting interpretation.
-
-## Phase 8 — Final Sweep, Commercial Positioning, and README Polish
-
-Phase 8 completes Build 9 with a final quality sweep, commercial positioning pass, and portfolio notes.
-
-Phase 8 provides:
-
-- **Final Review page** — Streamlit page summarising completion status, commercial positioning, portfolio value, limitations, and recommended next steps.
-- **Completion review notes** — detailed review of all phases, consulting value, connections to Builds 1–8, limitations, and future upgrade path.
-- **Portfolio summary notes** — portfolio-ready summary covering the problem it solves, target users, key features, consulting use cases, and what it demonstrates commercially.
-- **Commercial positioning notes** — one-sentence offer, ideal customer, core pain points, practical outcomes, consulting delivery use case, productisation potential, and suggested demo narrative.
-
-## Build 9 Completion Status
-
-Build 9 is complete. It includes:
-
-1. Synthetic capstone client data — three organisations, 21 journey stages, three indicators
-2. Client journey overview engine — health classification, completion rate, evidence scoring
-3. Cross-build insight aggregator — evidence health for all seven build areas
-4. Consulting recommendation pathway — readiness, consulting pathway, commercial next step
-5. Capstone dashboard UI — metrics, client spotlight, journey table, evidence table, recommendation table
-6. Capstone report builder — Markdown capstone report at portfolio or client scope
-7. Export centre and portfolio evidence pack — Markdown, CSV, JSON, PDF, and PNG exports
-8. Final review and commercial positioning — completion summary and commercial narrative
-
-**All phases: Complete**
+---
 
 ## Commercial Positioning
 
-Build 9 is the capstone wrapper for Builds 1–8. It demonstrates the full AI adoption consulting journey from readiness diagnosis through to tracked implementation delivery and client-facing reporting.
+Build 9 is suitable for:
 
-It is suitable for:
+- **Portfolio demonstration** — walk a prospect, recruiter, or evaluator through the full AI adoption consulting methodology in one session (8–12 minutes).
+- **Business development** — use the PDF capstone report and PNG chart as a leave-behind after a discovery conversation.
+- **Consulting methodology proof** — demonstrate a structured, repeatable, evidence-backed approach to AI adoption consulting across six UK sectors: training providers, universities, charities, NHS teams, housing associations, professional services.
+- **Future productisation** — the methodology, logic, and export structure are ready to accept real client data and live integrations without redesign.
 
-- **Portfolio demonstration** — walk a recruiter, evaluator, or prospective client through the full consulting methodology in one session.
-- **Business development** — use the capstone report and evidence pack as a leave-behind after a discovery conversation.
-- **Consulting methodology demonstration** — show how client evidence could move through a structured engagement while keeping this build synthetic-only.
-- **Future productisation** — the methodology, logic, and export structure are designed to support a subscription consulting toolkit or client-facing portal.
+This is not a production system. See `portfolio_notes/build_9_commercial_case_study.md` for the full commercial case study including future productisation path.
 
-This is not a production system. It uses synthetic data only, has no authentication, database, cloud deployment, or external LLM APIs, and requires human review before any real-world consulting use.
+---
 
-## How Build 9 Connects Builds 1–8
+## Technical Architecture
 
-```text
-Build 1   — Readiness and workflow diagnosis
-Build 2/3 — Document intelligence and RAG evidence
-Build 4   — Staff training and enablement
-Build 5   — Consulting report generation
-Build 6   — Governance and responsible AI controls
-Build 7   — ROI, adoption, and impact tracking
-Build 8   — Delivery and implementation tracking
-Build 9   — Capstone dashboard, report, and evidence pack
+```
+app.py                          ← Streamlit presentation layer only
+│
+├── data/
+│   └── synthetic_capstone_data.py   ← All synthetic clients, stages, indicators
+│
+├── logic/
+│   ├── capstone_overview.py         ← Phase 1 summary and validation
+│   ├── client_journey.py            ← Journey health engine
+│   ├── cross_build_insights.py      ← Build-area evidence aggregation
+│   ├── recommendation_pathway.py    ← Capstone readiness and commercial next step
+│   ├── capstone_dashboard.py        ← Dashboard context assembly
+│   ├── capstone_report.py           ← Markdown report builder
+│   └── export_centre.py             ← All export format generators
+│
+└── tests/
+    ├── test_synthetic_capstone_data.py
+    ├── test_capstone_overview.py
+    ├── test_client_journey.py
+    ├── test_cross_build_insights.py
+    ├── test_recommendation_pathway.py
+    ├── test_capstone_dashboard.py
+    ├── test_capstone_report.py
+    └── test_export_centre.py
 ```
 
-Each build appears in the capstone as a journey stage, a cross-build evidence row, a column in the CSV export, and a section of the JSON evidence pack.
+**Design principles:**
+- All logic is in pure functions in `logic/` — no side effects, fully testable.
+- `app.py` only handles data loading and rendering — no business logic.
+- All data comes from `data/synthetic_capstone_data.py` — one source of truth.
+- No shared mutable state between Streamlit pages.
+- British English throughout — consulting vocabulary, labels, and report text.
 
-## Completed Phases
+---
 
-1. Phase 1 — Scaffold and Synthetic Capstone Client Data — Complete
-2. Phase 2 — Client Journey Overview Engine — Complete
-3. Phase 3 — Cross-Build Insight Aggregator — Complete
-4. Phase 4 — Consulting Recommendation Pathway — Complete
-5. Phase 5 — Capstone Dashboard UI — Complete
-6. Phase 6 — Capstone Report Builder — Complete
-7. Phase 7 — Export Centre and Portfolio Evidence Pack — Complete
-8. Phase 8 — Final Sweep, Commercial Positioning, and README Polish — Complete
+## Project Structure
 
-## How to Run the App
+```
+ai_adoption_consulting_capstone/
+├── app.py
+├── requirements.txt
+├── pytest.ini
+├── README.md
+├── data/
+│   └── synthetic_capstone_data.py
+├── logic/
+│   ├── capstone_overview.py
+│   ├── client_journey.py
+│   ├── cross_build_insights.py
+│   ├── recommendation_pathway.py
+│   ├── capstone_dashboard.py
+│   ├── capstone_report.py
+│   └── export_centre.py
+├── tests/
+│   ├── test_synthetic_capstone_data.py
+│   ├── test_capstone_overview.py
+│   ├── test_client_journey.py
+│   ├── test_cross_build_insights.py
+│   ├── test_recommendation_pathway.py
+│   ├── test_capstone_dashboard.py
+│   ├── test_capstone_report.py
+│   └── test_export_centre.py
+├── screenshots/
+│   └── README.md
+└── portfolio_notes/
+    ├── README.md
+    ├── build_9_phase_1_notes.md
+    ├── build_9_phase_2_notes.md
+    ├── build_9_phase_3_notes.md
+    ├── build_9_phase_4_notes.md
+    ├── build_9_phase_5_notes.md
+    ├── build_9_phase_6_notes.md
+    ├── build_9_phase_7_notes.md
+    ├── build_9_completion_review.md
+    ├── build_9_portfolio_summary.md
+    ├── build_9_commercial_positioning.md
+    ├── build_9_demo_walkthrough.md
+    └── build_9_commercial_case_study.md
+```
+
+---
+
+## How to Run
 
 From this directory:
 
 ```bash
-python -m pip install -r requirements.txt
+pip install -r requirements.txt
 streamlit run app.py
 ```
 
+Then open **http://localhost:8501** in your browser.
+
+Start with **1. Capstone Client Setup** in the sidebar and follow the navigation through all eight pages.
+
+---
+
 ## How to Run Tests
+
+From this directory:
 
 ```bash
 pytest
 ```
 
-## Export Formats
+Expected output: **172 passed**
 
-The Export Centre provides:
+To run a specific test file:
 
-- Markdown capstone reports at portfolio or selected-client scope
-- CSV cross-build evidence
-- JSON portfolio evidence packs
-- PDF reports via reportlab
-- PNG readiness charts via matplotlib
+```bash
+pytest tests/test_client_journey.py
+pytest tests/test_export_centre.py
+```
 
-All exports are generated from synthetic demonstration data.
+---
 
-## Suggested Demo Flow
+## Synthetic Data and Safety
 
-1. Start with Capstone Client Setup
-2. Review Client Journey Overview
-3. Open Cross-Build Insight Aggregator
-4. Review Consulting Recommendation Pathway
-5. Open Capstone Dashboard
-6. Generate a Capstone Report
-7. Use Export Centre to download evidence
-8. Finish with Final Review
+All data in this build is synthetic:
+
+- Three fictional client organisations: BrightPath Digital Services, Northside Housing Association, Greenacre Professional Services.
+- 21 cross-build journey stages, designed to produce a range of positive, mixed, and review-needed consulting outcomes.
+- Three capstone portfolio indicators.
+
+No real client data, personal data, learner records, safeguarding data, HR data, or regulated information is used anywhere in this build.
+
+No external AI APIs are used. The build contains no calls to OpenAI, Claude, LangChain, LlamaIndex, or any language model. All outputs are deterministic Python logic.
+
+---
+
+## Limitations
+
+- **Synthetic data only.** This build uses fictional client organisations and fictional evidence records. It is a demonstration of the methodology, not a record of real consulting outcomes.
+- **No authentication.** There is no user login. This is not suitable for storing real client data.
+- **No database.** All data is in-process. Nothing persists between sessions.
+- **No production deployment.** This is a local Streamlit app, not a cloud-hosted service.
+- **No external integrations.** Builds 1–8 are not live-connected to Build 9. Evidence flows through synthetic data, not real tool outputs.
+- **Human review required.** Any real-world consulting use of this methodology requires human judgement and review before delivery to a client.
+
+---
+
+## Future Improvements
+
+A production version of this consulting tool would add:
+
+1. Real client data input — form or file upload replacing the synthetic data module.
+2. Authentication — per-consultant login for private client portfolios.
+3. Persistent database — client data, journey stages, and evidence records stored across sessions.
+4. Multi-tenant architecture — one dashboard instance per consulting firm.
+5. Cloud deployment — hosted access without a local install.
+6. Live integrations — evidence flowing directly from Builds 1–8 into the capstone layer.
+
+The methodology, logic, report structure, and export formats are already production-ready. The infrastructure is the remaining gap.
+
+---
+
+## Portfolio Status
+
+| Phase | Title | Status |
+|---|---|---|
+| 1 | Scaffold and Synthetic Capstone Client Data | Complete |
+| 2 | Client Journey Overview Engine | Complete |
+| 3 | Cross-Build Insight Aggregator | Complete |
+| 4 | Consulting Recommendation Pathway | Complete |
+| 5 | Capstone Dashboard UI | Complete |
+| 6 | Capstone Report Builder | Complete |
+| 7 | Export Centre and Portfolio Evidence Pack | Complete |
+| 8 | Final Sweep and Commercial Positioning | Complete |
+
+**All 8 phases complete. 172 tests passing. Ready for portfolio presentation.**
+
+---
+
+*Build 9 — AI Adoption Consulting Capstone Dashboard · Rashid AI Consult*  
+*Synthetic data only. Not professional consulting, legal, financial, or HR advice.*
