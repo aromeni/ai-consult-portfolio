@@ -87,13 +87,13 @@ inject_custom_css()
 # ── Sidebar navigation ────────────────────────────────────────────────────────
 
 PAGES = [
-    "🏠  Home",
-    "🏢  Organisation Profile",
-    "📊  AI Readiness Assessment",
-    "⚙️  Workflow Audit",
-    "⚠️  Risk Assessment",
-    "🚀  Pilot Recommendation",
-    "📄  Mini Report",
+    "Home",
+    "Organisation Profile",
+    "AI Readiness Assessment",
+    "Workflow Audit",
+    "Risk Assessment",
+    "Pilot Recommendation",
+    "Mini Report",
 ]
 
 with st.sidebar:
@@ -111,7 +111,7 @@ with st.sidebar:
     st.markdown(
         '<p style="font-size:0.76rem;color:#a0aec0;line-height:1.65;margin:0">'
         "<strong style='color:#718096'>Prototype v0.7</strong> · Polish Step 4<br>"
-        "⚠️ Synthetic data only.<br>"
+        "Synthetic data only.<br>"
         "No real personal or confidential data."
         "</p>",
         unsafe_allow_html=True,
@@ -137,32 +137,32 @@ if page == PAGES[0]:
         """
         <div class="bp-feature-grid">
           <div class="bp-feature-card">
-            <div class="card-icon">📊</div>
+            <div class="card-icon">01</div>
             <div class="card-title">AI Readiness Assessment</div>
             <div class="card-desc">Score the organisation across 10 dimensions. Total out of 100 with five readiness bands.</div>
           </div>
           <div class="bp-feature-card">
-            <div class="card-icon">⚙️</div>
+            <div class="card-icon">02</div>
             <div class="card-title">Workflow Audit</div>
             <div class="card-desc">Score one workflow for AI suitability across 10 dimensions. Total out of 50.</div>
           </div>
           <div class="bp-feature-card">
-            <div class="card-icon">⚠️</div>
+            <div class="card-icon">03</div>
             <div class="card-title">Risk Assessment</div>
             <div class="card-desc">Rate 10 risk categories by likelihood × impact. Safeguards per category.</div>
           </div>
           <div class="bp-feature-card">
-            <div class="card-icon">🚀</div>
+            <div class="card-icon">04</div>
             <div class="card-title">Pilot Recommendation</div>
             <div class="card-desc">Combines all three scores into one of six evidence-based recommendations.</div>
           </div>
           <div class="bp-feature-card">
-            <div class="card-icon">📄</div>
+            <div class="card-icon">05</div>
             <div class="card-title">Mini Report</div>
             <div class="card-desc">Editable 9-section Markdown report. Preview and download in one click.</div>
           </div>
           <div class="bp-feature-card">
-            <div class="card-icon">🛡️</div>
+            <div class="card-icon">06</div>
             <div class="card-title">Responsible AI</div>
             <div class="card-desc">Safety notices on every page. No real personal or learner data required.</div>
           </div>
@@ -403,7 +403,7 @@ elif page == PAGES[2]:
     with col2:
         alert_fn = getattr(st, level["alert_type"], st.info)
         alert_fn(f"**{level['category']}**\n\n{level['explanation']}")
-        st.info(f"💡 **Suggested next action:** {level['next_action']}")
+        st.info(f"**Suggested next action:** {level['next_action']}")
 
     st.divider()
     render_section_heading("Dimension scores")
@@ -595,7 +595,7 @@ elif page == PAGES[3]:
     with col2:
         alert_fn = getattr(st, level["alert_type"], st.info)
         alert_fn(f"**{level['category']}**\n\n{level['explanation']}")
-        st.info(f"💡 **Recommended next action:** {level['next_action']}")
+        st.info(f"**Recommended next action:** {level['next_action']}")
 
     st.divider()
     render_section_heading("Dimension scores")
@@ -627,7 +627,7 @@ elif page == PAGES[4]:
     )
 
     st.warning(
-        "⚠️ **This tool is a prototype and does not provide legal, safeguarding, HR, "
+        "**This tool is a prototype and does not provide legal, safeguarding, HR, "
         "compliance, medical, financial, or academic-integrity advice.** "
         "Outputs are a structured starting point for conversation — not a certified audit result."
     )
@@ -762,7 +762,7 @@ elif page == PAGES[4]:
         st.success(f"**Overall recommendation:** {summary['recommendation']}")
 
     st.divider()
-    with st.expander("📋 BrightPath example — lesson planning support"):
+    with st.expander("BrightPath example — lesson planning support"):
         st.markdown(f"**Use case:** {BRIGHTPATH_RISK_PROFILE['use_case']}")
         example_rows = []
         for cat in RISK_CATEGORIES:
@@ -964,7 +964,7 @@ elif page == PAGES[5]:
     st.dataframe(pd.DataFrame(summary_rows), use_container_width=True, hide_index=True)
 
     st.divider()
-    with st.expander("📋 BrightPath example — lesson planning support"):
+    with st.expander("BrightPath example — lesson planning support"):
         eg = BRIGHTPATH_PILOT_EXAMPLE
         eg_rec = get_pilot_recommendation(
             eg["readiness_score"], eg["workflow_score"],
@@ -1301,7 +1301,7 @@ elif page == PAGES[6]:
     markdown_report = generate_markdown_report(report_data)
     filename = create_report_filename(report_data["org_name"])
 
-    with st.expander("📋 Report preview"):
+    with st.expander("Report preview"):
         st.markdown(markdown_report)
 
     st.caption(

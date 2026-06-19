@@ -44,14 +44,14 @@ section[data-testid="stSidebar"] .wf-todo { color: #94a3b8 !important; font-size
     padding: 0.7rem 1rem;
     box-shadow: 0 1px 2px rgba(15, 23, 42, 0.05);
 }
-[data-testid="stMetricValue"] { color: #1a2744 !important; font-weight: 800 !important; font-size: 1.5rem !important; }
+[data-testid="stMetricValue"] { color: #2563eb !important; font-weight: 800 !important; font-size: 1.5rem !important; }
 [data-testid="stMetricLabel"] { color: #64748b !important; font-size: 0.78rem !important; text-transform: uppercase; letter-spacing: 0.05em; }
 [data-testid="stMetricDelta"] { font-size: 0.8rem !important; }
 
 /* ─── Buttons ─────────────────────────────────────────────────────────────── */
 .stButton > button { border-radius: 8px !important; font-weight: 600 !important; font-size: 0.85rem !important; transition: all 0.15s ease-out !important; }
-.stButton > button[kind="primary"] { background: #1a2744 !important; border-color: #1a2744 !important; }
-.stButton > button[kind="primary"]:hover { background: #243a6e !important; border-color: #243a6e !important; transform: translateY(-1px); }
+.stButton > button[kind="primary"] { background: #2563eb !important; border-color: #2563eb !important; }
+.stButton > button[kind="primary"]:hover { background: #1d4ed8 !important; border-color: #1d4ed8 !important; transform: translateY(-1px); }
 .stButton > button:hover, .stDownloadButton > button:hover { transform: translateY(-1px); box-shadow: 0 2px 6px rgba(15, 23, 42, 0.12); }
 .stDownloadButton > button { border-radius: 8px !important; font-weight: 600 !important; }
 
@@ -75,7 +75,7 @@ section[data-testid="stSidebar"] .wf-todo { color: #94a3b8 !important; font-size
 hr { border-color: #e2e8f0 !important; margin: 1.25rem 0 !important; }
 
 /* ─── Page header ─────────────────────────────────────────────────────────── */
-.dp-header { padding-bottom: 0.75rem; border-bottom: 3px solid #3b6cf7; margin-bottom: 1.5rem; }
+.dp-header { padding-bottom: 0.75rem; border-bottom: 3px solid #2563eb; margin-bottom: 1.5rem; }
 .dp-header h1 { font-size: 1.75rem !important; color: #1a2744 !important; margin-bottom: 0.1rem !important; }
 .dp-subtitle { color: #64748b; font-size: 0.92rem; margin: 0; }
 

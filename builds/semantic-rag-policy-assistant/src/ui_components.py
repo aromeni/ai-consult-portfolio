@@ -27,14 +27,14 @@ section[data-testid="stSidebar"] hr { border-color: #334155 !important; }
 section[data-testid="stSidebar"] .stRadio label { color: #e2e8f0 !important; font-size: 0.88rem !important; }
 
 /* ─── Metrics ─────────────────────────────────────────────────────────────── */
-[data-testid="stMetricValue"] { color: #1a2744 !important; font-weight: 800 !important; font-size: 1.5rem !important; }
+[data-testid="stMetricValue"] { color: #2563eb !important; font-weight: 800 !important; font-size: 1.5rem !important; }
 [data-testid="stMetricLabel"] { color: #64748b !important; font-size: 0.78rem !important; text-transform: uppercase; letter-spacing: 0.05em; }
 [data-testid="stMetricDelta"] { font-size: 0.8rem !important; }
 
 /* ─── Buttons ─────────────────────────────────────────────────────────────── */
 .stButton > button { border-radius: 8px !important; font-weight: 600 !important; font-size: 0.85rem !important; transition: all 0.15s ease-out !important; }
-.stButton > button[kind="primary"] { background: #1a2744 !important; border-color: #1a2744 !important; }
-.stButton > button[kind="primary"]:hover { background: #243a6e !important; border-color: #243a6e !important; transform: translateY(-1px); }
+.stButton > button[kind="primary"] { background: #2563eb !important; border-color: #2563eb !important; }
+.stButton > button[kind="primary"]:hover { background: #1d4ed8 !important; border-color: #1d4ed8 !important; transform: translateY(-1px); }
 
 /* ─── Inputs ──────────────────────────────────────────────────────────────── */
 .stTextInput > div > div > input { border-radius: 8px !important; border-color: #cbd5e1 !important; font-size: 0.9rem !important; }
@@ -55,7 +55,7 @@ hr { border-color: #e2e8f0 !important; margin: 1.25rem 0 !important; }
 .stDownloadButton > button { border-radius: 8px !important; font-weight: 600 !important; }
 
 /* ─── Page header ─────────────────────────────────────────────────────────── */
-.dp-header { padding-bottom: 0.75rem; border-bottom: 3px solid #3b6cf7; margin-bottom: 1.5rem; }
+.dp-header { padding-bottom: 0.75rem; border-bottom: 3px solid #2563eb; margin-bottom: 1.5rem; }
 .dp-header h1 { font-size: 1.75rem !important; color: #1a2744 !important; margin-bottom: 0.1rem !important; }
 .dp-subtitle { color: #64748b; font-size: 0.92rem; margin: 0; }
 
@@ -261,7 +261,7 @@ def render_prototype_notice(text: str = ""):
 
 def render_placeholder(title: str, body: str):
     st.markdown(
-        f'<div class="dp-placeholder"><h4>🔜 {_e(title)}</h4><p>{_e(body)}</p></div>',
+        f'<div class="dp-placeholder"><h4>{_e(title)}</h4><p>{_e(body)}</p></div>',
         unsafe_allow_html=True,
     )
 
@@ -386,7 +386,7 @@ def render_semantic_result_card(result: dict):
         f'<div class="dp-pill-row">'
         f'<span class="dp-rank-pill">#{_e(str(rank))}</span>'
         f'<span class="dp-score-pill">score {_e(score_str)}</span>'
-        f'<span class="dp-doc-pill">📄 {_e(str(doc))}</span>'
+        f'<span class="dp-doc-pill">{_e(str(doc))}</span>'
         f'<span class="dp-chunk-pill">{_e(str(word_count))}w</span>'
         f'</div>'
         f'<div class="dp-result-id">chunk id: {_e(str(chunk_id))}</div>'
@@ -417,7 +417,7 @@ def render_evidence_card(item: dict):
         f'<div class="dp-pill-row">'
         f'<span class="dp-rank-pill">#{_e(str(rank))}</span>'
         f'<span class="dp-score-pill">score {_e(score_str)}</span>'
-        f'<span class="dp-doc-pill">📄 {_e(str(doc))}</span>'
+        f'<span class="dp-doc-pill">{_e(str(doc))}</span>'
         f'<span class="dp-chunk-pill">chunk {_e(str(chunk_index))}</span>'
         f'</div>'
         f'<div class="dp-result-id">chunk id: {_e(str(chunk_id))}</div>'
@@ -444,7 +444,7 @@ def render_keyword_result_card(result: dict, rank: int):
         f'<div class="dp-pill-row">'
         f'<span class="dp-rank-pill">#{_e(str(rank))}</span>'
         f'<span class="dp-score-pill">score {_e(str(score))}</span>'
-        f'<span class="dp-doc-pill">📄 {_e(str(doc))}</span>'
+        f'<span class="dp-doc-pill">{_e(str(doc))}</span>'
         f'</div>'
         f'<div style="margin:0.3rem 0 0.25rem 0">{terms_html}</div>'
         f'<div class="dp-result-id">chunk id: {_e(str(chunk_id))}</div>'
@@ -459,7 +459,7 @@ def render_keyword_result_card(result: dict, rank: int):
 def render_comparison_insight_card(insight: str):
     """Render the retrieval comparison insight in a styled amber card."""
     st.markdown(
-        f'<div class="dp-insight">💡 {_e(insight)}</div>',
+        f'<div class="dp-insight">{_e(insight)}</div>',
         unsafe_allow_html=True,
     )
 
@@ -482,7 +482,7 @@ def render_chunk_card(chunk: dict):
     text = chunk.get("text", "")[:300]
     st.markdown(
         f'<div class="dp-chunk">'
-        f'<div class="dp-chunk-meta">📄 <strong>{_e(doc)}</strong> · Chunk {_e(str(idx))} · {_e(str(wc))} words</div>'
+        f'<div class="dp-chunk-meta"><strong>{_e(doc)}</strong> · Chunk {_e(str(idx))} · {_e(str(wc))} words</div>'
         f'<div class="dp-chunk-text">{_e(text)}{"…" if len(chunk.get("text","")) > 300 else ""}</div>'
         f"</div>",
         unsafe_allow_html=True,
@@ -499,7 +499,7 @@ def render_search_result(result: dict):
     )
     st.markdown(
         f'<div class="dp-result">'
-        f'<div class="dp-result-meta">📄 <strong>{_e(doc)}</strong> · Score: <strong>{_e(str(score))}</strong> · {badges}</div>'
+        f'<div class="dp-result-meta"><strong>{_e(doc)}</strong> · Score: <strong>{_e(str(score))}</strong> · {badges}</div>'
         f'<div class="dp-chunk-text">{_e(text)}{"…" if len(result.get("text","")) > 300 else ""}</div>'
         f"</div>",
         unsafe_allow_html=True,

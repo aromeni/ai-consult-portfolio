@@ -65,6 +65,39 @@ PHASE_NAVIGATION = [
 
 ACTIVE_PHASES = PHASE_NAVIGATION[:8]
 
+_PORTFOLIO_CSS = """
+<style>
+/* ─── Rashid AI Consult — Portfolio Theme ──────────────────────────────────── */
+.main .block-container { padding-top: 1.5rem; padding-bottom: 3rem; }
+section[data-testid="stSidebar"] { background: #1a2744 !important; }
+section[data-testid="stSidebar"] p,
+section[data-testid="stSidebar"] span,
+section[data-testid="stSidebar"] label,
+section[data-testid="stSidebar"] div { color: #cbd5e1 !important; }
+section[data-testid="stSidebar"] strong,
+section[data-testid="stSidebar"] b { color: #f1f5f9 !important; }
+section[data-testid="stSidebar"] hr { border-color: #334155 !important; }
+section[data-testid="stSidebar"] .stRadio label { color: #e2e8f0 !important; font-size: 0.88rem !important; }
+section[data-testid="stSidebar"] [data-testid="stCaption"] { color: #94a3b8 !important; font-size: 0.75rem !important; }
+h1 { color: #0f172a !important; font-weight: 800 !important; letter-spacing: -0.02em; }
+h2 { color: #1a2744 !important; font-weight: 700 !important; border-left: 4px solid #2563eb; padding-left: 0.65rem; }
+h3 { color: #1e3a5f !important; font-weight: 600 !important; }
+[data-testid="stMetric"] { background: #ffffff; border: 1px solid #e2e8f0; border-radius: 10px; padding: 0.7rem 1rem; box-shadow: 0 1px 2px rgba(15,23,42,0.05); }
+[data-testid="stMetricValue"] { color: #2563eb !important; font-weight: 800 !important; font-size: 1.5rem !important; }
+[data-testid="stMetricLabel"] { color: #64748b !important; font-size: 0.78rem !important; text-transform: uppercase; letter-spacing: 0.05em; font-weight: 600 !important; }
+.stButton > button { border-radius: 8px !important; font-weight: 600 !important; font-size: 0.85rem !important; transition: all 0.15s ease-out !important; }
+.stButton > button:hover { transform: translateY(-1px); box-shadow: 0 2px 6px rgba(15,23,42,0.12); }
+.stDownloadButton > button { border-radius: 8px !important; font-weight: 600 !important; }
+.stTextInput > div > div > input { border-radius: 8px !important; border-color: #cbd5e1 !important; }
+.stSelectbox > div > div { border-radius: 8px !important; border-color: #cbd5e1 !important; }
+hr { border-color: #e2e8f0 !important; margin: 1.25rem 0 !important; }
+.stTabs [data-baseweb="tab"] { font-weight: 600 !important; }
+[data-testid="stExpander"] { background: #ffffff; border: 1px solid #e2e8f0; border-radius: 10px; }
+.streamlit-expanderHeader { font-weight: 600 !important; color: #1e3a5f !important; }
+[data-testid="stDataFrame"] { border: 1px solid #e2e8f0; border-radius: 10px; }
+</style>
+"""
+
 
 def render_phase_1(clients, stages, indicators):
     st.caption("Capstone setup / Phase 1")
@@ -768,6 +801,7 @@ def main():
         page_title="Build 9 — AI Adoption Consulting Capstone Dashboard",
         layout="wide",
     )
+    st.markdown(_PORTFOLIO_CSS, unsafe_allow_html=True)
 
     clients = get_synthetic_capstone_clients()
     stages = get_synthetic_cross_build_stages()

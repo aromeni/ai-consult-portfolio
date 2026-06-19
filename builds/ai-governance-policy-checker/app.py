@@ -315,7 +315,7 @@ def page_governance_framework():
     st.markdown("---")
     st.markdown("### Governance Domains")
 
-    priority_icons = {"High": "🔴", "Medium": "🟡", "Low": "🟢"}
+    priority_icons = {"High": "High", "Medium": "Medium", "Low": "Low"}
     for domain in framework:
         icon = priority_icons.get(domain["priority_level"], "⬜")
         label = (
@@ -418,7 +418,7 @@ def page_policy_checker():
     high_priority_gaps = summary.get("high_priority_gaps", [])
     if high_priority_gaps:
         for gap in high_priority_gaps:
-            st.markdown(f"- 🔴 {gap}")
+            st.markdown(f"- {gap}")
     else:
         st.success("No high-priority gaps identified in the synthetic policy pack.")
 
@@ -434,23 +434,23 @@ def page_policy_checker():
     with col1:
         st.markdown("### Best-Covered Domains")
         for domain in summary.get("best_covered_domains", []):
-            st.markdown(f"- ✅ {domain}")
+            st.markdown(f"- {domain}")
     with col2:
         st.markdown("### Weakest Domains")
         for domain in summary.get("weakest_domains", []):
-            st.markdown(f"- ⚠️ {domain}")
+            st.markdown(f"- {domain}")
 
     # Domain coverage detail
     st.markdown("---")
     st.markdown("### Domain Coverage Review")
 
     level_icons = {
-        "Strong coverage": "✅",
-        "Partial coverage": "🟡",
-        "Weak coverage": "🔶",
-        "Not covered": "❌",
+        "Strong coverage": "Strong",
+        "Partial coverage": "Partial",
+        "Weak coverage": "Weak",
+        "Not covered": "Not covered",
     }
-    priority_icons = {"High": "🔴", "Medium": "🟡", "Low": "🟢"}
+    priority_icons = {"High": "High", "Medium": "Medium", "Low": "Low"}
 
     for result in results["domain_results"]:
         level = result["coverage_level"]
@@ -592,10 +592,10 @@ def page_gap_analysis():
     prioritised = gap_analysis.get("prioritised_gaps", [])
     if prioritised:
         severity_icons = {
-            "Critical gap": "🔴",
-            "High gap": "🟠",
-            "Medium gap": "🟡",
-            "Low gap": "🟢",
+            "Critical gap": "Critical",
+            "High gap": "High",
+            "Medium gap": "Medium",
+            "Low gap": "Low",
         }
         for gap in prioritised:
             sev = gap.get("gap_severity", "")
@@ -642,7 +642,7 @@ def page_gap_analysis():
     if covered:
         for domain in covered:
             st.markdown(
-                f"✅ **{domain.get('domain_name', '')}** — "
+                f"**{domain.get('domain_name', '')}** — "
                 f"{domain.get('coverage_score', 0)}/100 · {domain.get('priority_level', '')} priority"
             )
     else:
@@ -797,10 +797,10 @@ def page_recommendations():
     st.markdown("---")
     st.markdown("### Prioritised Recommendations")
     priority_icons = {
-        "Urgent": "🔴",
-        "High priority": "🟠",
-        "Medium priority": "🟡",
-        "Low priority": "🟢",
+        "Urgent": "Urgent",
+        "High priority": "High priority",
+        "Medium priority": "Medium priority",
+        "Low priority": "Low priority",
     }
     prioritised = recommendations.get("prioritised_recommendations", [])
     if prioritised:
@@ -963,7 +963,7 @@ def page_governance_maturity():
         if strengths:
             for s in strengths:
                 st.markdown(
-                    f"✅ **{s.get('domain_name', '')}** — "
+                    f"**{s.get('domain_name', '')}** — "
                     f"{s.get('maturity_score', 0)}/100"
                 )
         else:
@@ -974,7 +974,7 @@ def page_governance_maturity():
         if weaknesses:
             for w in weaknesses:
                 st.markdown(
-                    f"⚠️ **{w.get('domain_name', '')}** — "
+                    f"**{w.get('domain_name', '')}** — "
                     f"{w.get('maturity_score', 0)}/100"
                 )
         else:
@@ -987,9 +987,9 @@ def page_governance_maturity():
         for b in blockers:
             btype = b.get("blocker_type", "")
             if btype in ("Critical gap", "High gap"):
-                icon = "🔴"
+                icon = "High"
             else:
-                icon = "🟠"
+                icon = "High priority"
             with st.expander(
                 f"{icon} {b.get('blocker_id', '')} — {b.get('domain_name', '')} ({btype})"
             ):
@@ -1013,13 +1013,13 @@ def page_governance_maturity():
     st.markdown("### Domain Maturity Scores")
 
     level_icons = {
-        "Optimised governance": "✅",
-        "Managed governance": "🟢",
-        "Defined governance": "🔵",
-        "Developing governance": "🟡",
-        "Initial governance": "🔴",
+        "Optimised governance": "Optimised",
+        "Managed governance": "Managed",
+        "Defined governance": "Defined",
+        "Developing governance": "Developing",
+        "Initial governance": "Initial",
     }
-    priority_icons = {"High": "🔴", "Medium": "🟡", "Low": "🟢"}
+    priority_icons = {"High": "High", "Medium": "Medium", "Low": "Low"}
 
     domain_scores = maturity_summary.get("domain_maturity_scores", [])
     for ds in sorted(domain_scores, key=lambda x: x.get("maturity_score", 0)):
@@ -1097,14 +1097,14 @@ def page_governance_report():
         st.markdown("**Available outputs:**")
         for key, label in _report_outputs:
             if key in st.session_state:
-                st.markdown(f"✅ {label}")
+                st.markdown(f"{label}")
     with miss_col:
         st.markdown("**Missing recommended outputs:**")
         any_missing = any(k not in st.session_state for k, _ in _report_outputs)
         if any_missing:
             for key, label in _report_outputs:
                 if key not in st.session_state:
-                    st.markdown(f"❌ {label}")
+                    st.markdown(f"{label}")
         else:
             st.markdown("All recommended outputs available.")
 
@@ -1298,14 +1298,14 @@ def page_export_centre():
         st.markdown("**Available outputs:**")
         for key, label in _report_outputs:
             if key in st.session_state:
-                st.markdown(f"✅ {label}")
+                st.markdown(f"{label}")
     with miss_col:
         st.markdown("**Missing recommended outputs:**")
         any_missing = any(k not in st.session_state for k, _ in _report_outputs)
         if any_missing:
             for key, label in _report_outputs:
                 if key not in st.session_state:
-                    st.markdown(f"❌ {label}")
+                    st.markdown(f"{label}")
         else:
             st.markdown("All recommended outputs available.")
 
@@ -1355,17 +1355,17 @@ def page_export_centre():
     with col_a:
         st.markdown("**Required**")
         for item in req_items:
-            icon = "✅" if item["is_complete"] else "❌"
+            icon = "Yes" if item["is_complete"] else "No"
             st.markdown(f"{icon} {item['label']}")
     with col_b:
         st.markdown("**Recommended**")
         for item in rec_items:
-            icon = "✅" if item["is_complete"] else "⬜"
+            icon = "Yes" if item["is_complete"] else "-"
             st.markdown(f"{icon} {item['label']}")
 
     with st.expander("Advisory checks"):
         for item in adv_items:
-            icon = "✅" if item["is_complete"] else "⬜"
+            icon = "Yes" if item["is_complete"] else "-"
             st.markdown(f"{icon} {item['label']} — {item['note']}")
 
     # Analytics
@@ -1536,7 +1536,7 @@ def page_completion_review():
     half = (len(phases) + 1) // 2
     for i, phase in enumerate(phases):
         col = col1 if i < half else col2
-        mark = "✅" if phase["status"] == "Complete" else "❌"
+        mark = "Complete" if phase["status"] == "Complete" else "Pending"
         with col:
             st.markdown(f"{mark} **{phase['phase']}:** {phase['name']}")
 
@@ -1556,12 +1556,12 @@ def page_completion_review():
     with avail_col:
         st.markdown("**Available outputs:**")
         for item in output_status["available_outputs"]:
-            st.markdown(f"✅ {item['label']}")
+            st.markdown(f"- {item['label']}")
     with miss_col:
         st.markdown("**Missing outputs:**")
         if output_status["missing_outputs"]:
             for item in output_status["missing_outputs"]:
-                st.markdown(f"❌ {item['label']}")
+                st.markdown(f"- {item['label']} (not complete)")
         else:
             st.markdown("All expected outputs are available.")
 
@@ -1586,12 +1586,12 @@ def page_completion_review():
     with doc_col1:
         st.markdown("**Present:**")
         for doc in doc_status["existing_files"]:
-            st.markdown(f"✅ {doc['label']}")
+            st.markdown(f"- {doc['label']}")
     with doc_col2:
         st.markdown("**Missing:**")
         if doc_status["missing_files"]:
             for doc in doc_status["missing_files"]:
-                st.markdown(f"❌ {doc['label']}")
+                st.markdown(f"- {doc['label']} (missing)")
         else:
             st.markdown("All documentation files are present.")
 

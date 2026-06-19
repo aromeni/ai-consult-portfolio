@@ -981,7 +981,7 @@ def generate_report_appendices_section(report_data: dict) -> str:
         "governance_maturity": "Governance maturity summary",
     }
     for key, label in labels.items():
-        tick = "✅" if available.get(key) else "❌ (not generated)"
+        tick = "Yes" if available.get(key) else "Not generated"
         lines.append(f"- {tick} {label}")
     lines.append("")
 

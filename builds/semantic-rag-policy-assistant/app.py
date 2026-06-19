@@ -52,20 +52,20 @@ ui.inject_css()
 # ── Sidebar ───────────────────────────────────────────────────────────────────
 
 with st.sidebar:
-    st.markdown("### 🔎 Semantic RAG\n**Policy Assistant**")
+    st.markdown("### Semantic RAG\n**Policy Assistant**")
     st.caption("Build 3 · Local embeddings · FAISS · No external APIs")
     st.markdown("---")
     page = st.radio(
         "Navigate",
         [
-            "🏠  Home",
-            "📚  Document Library",
-            "✂️  Chunking Explorer",
-            "🧠  Embedding Index Builder",
-            "🔍  Semantic Search",
-            "💬  RAG Q&A",
-            "⚖️  Retrieval Comparison",
-            "📄  Mini Answer Report",
+            "Home",
+            "Document Library",
+            "Chunking Explorer",
+            "Embedding Index Builder",
+            "Semantic Search",
+            "RAG Q&A",
+            "Retrieval Comparison",
+            "Mini Answer Report",
         ],
         label_visibility="collapsed",
     )
@@ -76,7 +76,7 @@ with st.sidebar:
 # ── Page routing ──────────────────────────────────────────────────────────────
 
 # ── Home ───────────────────────────────────────────────────────────────────────
-if page == "🏠  Home":
+if page == "Home":
     ui.render_page_header(
         "Semantic RAG Policy Assistant",
         "Local semantic retrieval-augmented generation using synthetic policy documents",
@@ -113,7 +113,7 @@ if page == "🏠  Home":
 
 
 # ── Document Library ───────────────────────────────────────────────────────────
-elif page == "📚  Document Library":
+elif page == "Document Library":
     ui.render_page_header(
         "Document Library",
         "Synthetic policy documents — metadata and preview",
@@ -142,12 +142,12 @@ elif page == "📚  Document Library":
         )
         if selected:
             docs = load_all_documents(DOCS_DIR)
-            with st.expander(f"📄 {selected}", expanded=True):
+            with st.expander(f"{selected}", expanded=True):
                 st.markdown(docs[selected])
 
 
 # ── Chunking Explorer ──────────────────────────────────────────────────────────
-elif page == "✂️  Chunking Explorer":
+elif page == "Chunking Explorer":
     ui.render_page_header(
         "Chunking Explorer",
         "Configure and inspect how policy documents are split before embedding",
@@ -155,7 +155,7 @@ elif page == "✂️  Chunking Explorer":
     ui.render_safety_warning()
 
     # ── Why chunking matters ─────────────────────────────────────────────────
-    with st.expander("📖 Why chunking matters in RAG", expanded=False):
+    with st.expander("Why chunking matters in RAG", expanded=False):
         st.markdown(
             """
 **RAG systems retrieve chunks, not whole documents.**
@@ -208,7 +208,7 @@ the RAG system cannot produce a well-grounded answer — no matter how good the 
     # ── Validation ───────────────────────────────────────────────────────────
     is_valid, val_msg = validate_chunk_settings(int(chunk_size), int(overlap))
     if not is_valid:
-        st.error(f"⚠ {val_msg}")
+        st.error(val_msg)
         st.stop()
 
     # Word count for estimation
@@ -225,7 +225,7 @@ the RAG system cannot produce a well-grounded answer — no matter how good the 
     )
 
     # ── Generate button ───────────────────────────────────────────────────────
-    if st.button("✂️ Generate Chunks", type="primary"):
+    if st.button("Generate Chunks", type="primary"):
         if doc_scope == "All documents":
             chunks = chunk_documents(
                 docs, chunk_size=int(chunk_size), overlap=int(overlap), strategy=strategy_key
@@ -320,7 +320,7 @@ the RAG system cannot produce a well-grounded answer — no matter how good the 
 
 
 # ── Embedding Index Builder ────────────────────────────────────────────────────
-elif page == "🧠  Embedding Index Builder":
+elif page == "Embedding Index Builder":
     ui.render_page_header(
         "Embedding Index Builder",
         "Generate local embeddings and build a FAISS vector index — Phase 4 (functional)",
@@ -333,7 +333,7 @@ elif page == "🧠  Embedding Index Builder":
     )
 
     # ── What are embeddings? ──────────────────────────────────────────────────
-    with st.expander("🔢 What are embeddings?", expanded=False):
+    with st.expander("What are embeddings?", expanded=False):
         st.markdown(
             """
 **Embeddings are numeric vector representations of text.**
@@ -353,7 +353,7 @@ Retrieval works by finding which chunk vectors are most similar to the query vec
         )
 
     # ── What is a FAISS vector index? ────────────────────────────────────────
-    with st.expander("📦 What is a FAISS vector index?", expanded=False):
+    with st.expander("What is a FAISS vector index?", expanded=False):
         st.markdown(
             """
 **FAISS (Facebook AI Similarity Search) is a library for efficient vector similarity search.**
@@ -477,7 +477,7 @@ Retrieval works by finding which chunk vectors are most similar to the query vec
             "Later runs are much faster because the model is cached for the session."
         )
 
-        if st.button("🧠 Generate Embeddings", type="primary"):
+        if st.button("Generate Embeddings", type="primary"):
             valid, val_msg = validate_chunks_for_embedding(chunks)
             if not valid:
                 st.error(f"Cannot embed: {val_msg}")
@@ -538,7 +538,7 @@ Retrieval works by finding which chunk vectors are most similar to the query vec
         "**l2** uses IndexFlatL2 (Euclidean distance)."
     )
 
-    if st.button("📦 Build FAISS Index", type="primary"):
+    if st.button("Build FAISS Index", type="primary"):
         try:
             with st.spinner("Building FAISS vector index..."):
                 vs = _do_build_index(
@@ -611,14 +611,14 @@ Retrieval works by finding which chunk vectors are most similar to the query vec
 
 
 # ── Semantic Search ────────────────────────────────────────────────────────────
-elif page == "🔍  Semantic Search":
+elif page == "Semantic Search":
     ui.render_page_header(
         "Semantic Search",
         "Vector similarity search over embedded policy chunks — Phase 5 (functional)",
     )
     ui.render_safety_warning()
 
-    with st.expander("🔍 What does semantic search do?", expanded=False):
+    with st.expander("What does semantic search do?", expanded=False):
         st.markdown(
             """
 **Semantic search finds relevant content by meaning, not just matching words.**
@@ -695,7 +695,7 @@ elif page == "🔍  Semantic Search":
     )
     top_k = st.slider("Number of results", min_value=1, max_value=10, value=5)
 
-    if st.button("🔍 Search", type="primary"):
+    if st.button("Search", type="primary"):
         if not query or not query.strip():
             st.warning("Enter a search query above.")
         else:
@@ -762,14 +762,14 @@ elif page == "🔍  Semantic Search":
 
 
 # ── RAG Q&A ────────────────────────────────────────────────────────────────────
-elif page == "💬  RAG Q&A":
+elif page == "RAG Q&A":
     ui.render_page_header(
         "RAG Q&A",
         "Grounded question answering with deterministic evidence-based answers — Phase 6 (functional)",
     )
     ui.render_safety_warning()
 
-    with st.expander("💬 What is RAG Q&A?", expanded=False):
+    with st.expander("What is RAG Q&A?", expanded=False):
         st.markdown(
             """
 **RAG Q&A (Retrieval-Augmented Generation) answers questions from retrieved document evidence.**
@@ -846,7 +846,7 @@ elif page == "💬  RAG Q&A":
     )
     top_k = st.slider("Chunks to retrieve", min_value=1, max_value=10, value=5)
 
-    if st.button("💬 Generate Answer", type="primary"):
+    if st.button("Generate Answer", type="primary"):
         if not question or not question.strip():
             st.warning("Enter a question above.")
         else:
@@ -923,7 +923,7 @@ elif page == "💬  RAG Q&A":
         md_content = _generate_rag_md(rag)
         safe_name = "".join(c if c.isalnum() else "_" for c in rag["question"][:40]).lower()
         st.download_button(
-            "⬇️ Download Q&A response (.md)",
+            "Download Q&A response (.md)",
             data=md_content,
             file_name=f"rag_response_{safe_name}.md",
             mime="text/markdown",
@@ -937,7 +937,7 @@ elif page == "💬  RAG Q&A":
 
 
 # ── Retrieval Comparison ───────────────────────────────────────────────────────
-elif page == "⚖️  Retrieval Comparison":
+elif page == "Retrieval Comparison":
     from src.comparison import (
         compare_retrieval_methods as _do_comparison,
         generate_retrieval_comparison_markdown as _generate_comparison_md,
@@ -996,7 +996,7 @@ elif page == "⚖️  Retrieval Comparison":
     )
     _comp_top_k = st.slider("Chunks to retrieve per method", 1, 10, 5, key="comparison_top_k")
 
-    if st.button("⚖️ Compare Retrieval Methods"):
+    if st.button("Compare Retrieval Methods"):
         if not _comp_query or not _comp_query.strip():
             st.warning("Enter a query before running the comparison.")
         else:
@@ -1104,7 +1104,7 @@ elif page == "⚖️  Retrieval Comparison":
             .lower()
         )
         st.download_button(
-            "⬇️ Download comparison report (.md)",
+            "Download comparison report (.md)",
             data=_generate_comparison_md(_comp),
             file_name=f"retrieval-comparison-{_safe_q}.md",
             mime="text/markdown",
@@ -1117,7 +1117,7 @@ elif page == "⚖️  Retrieval Comparison":
 
 
 # ── Mini Answer Report ─────────────────────────────────────────────────────────
-elif page == "📄  Mini Answer Report":
+elif page == "Mini Answer Report":
     from src.report_generator import (
         generate_markdown_answer_report as _gen_report,
         create_report_filename as _safe_filename,
@@ -1204,7 +1204,7 @@ elif page == "📄  Mini Answer Report":
         height=120,
     )
 
-    if st.button("📄 Generate Report"):
+    if st.button("Generate Report"):
         _report_data = _build_report_data(dict(st.session_state))
         _report_data["report_title"] = _rpt_title.strip() or "Semantic RAG Policy Answer Report"
         _report_data["reviewer_notes"] = [
@@ -1232,7 +1232,7 @@ elif page == "📄  Mini Answer Report":
 
         _rpt_fn_out = st.session_state.get("last_answer_report_filename", "semantic-rag-answer-report.md")
         st.download_button(
-            "⬇️ Download report (.md)",
+            "Download report (.md)",
             data=_rpt_md_out,
             file_name=_rpt_fn_out,
             mime="text/markdown",

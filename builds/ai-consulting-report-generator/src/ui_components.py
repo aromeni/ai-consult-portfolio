@@ -38,12 +38,12 @@ section[data-testid="stSidebar"] .wf-todo { color: #94a3b8 !important; font-size
 
 /* Metrics */
 [data-testid="stMetric"] { background: #ffffff; border: 1px solid #e2e8f0; border-radius: 10px; padding: 0.7rem 1rem; box-shadow: 0 1px 2px rgba(15,23,42,0.05); }
-[data-testid="stMetricValue"] { color: #1a2744 !important; font-weight: 800 !important; font-size: 1.5rem !important; }
+[data-testid="stMetricValue"] { color: #2563eb !important; font-weight: 800 !important; font-size: 1.5rem !important; }
 [data-testid="stMetricLabel"] { color: #64748b !important; font-size: 0.78rem !important; text-transform: uppercase; letter-spacing: 0.05em; }
 
 /* Buttons */
-.stButton > button { background: #3b6cf7 !important; color: #ffffff !important; border: none !important; border-radius: 8px !important; font-weight: 600 !important; padding: 0.5rem 1.25rem !important; transition: background 0.15s ease; }
-.stButton > button:hover { background: #2a55d6 !important; }
+.stButton > button { background: #2563eb !important; color: #ffffff !important; border: none !important; border-radius: 8px !important; font-weight: 600 !important; padding: 0.5rem 1.25rem !important; transition: background 0.15s ease; }
+.stButton > button:hover { background: #1d4ed8 !important; }
 .stDownloadButton > button { background: #1a2744 !important; color: #ffffff !important; border: none !important; border-radius: 8px !important; font-weight: 600 !important; }
 
 /* Expanders */
@@ -51,13 +51,13 @@ section[data-testid="stSidebar"] .wf-todo { color: #94a3b8 !important; font-size
 .streamlit-expanderContent { background: #ffffff !important; border: 1px solid #e2e8f0 !important; border-radius: 0 0 8px 8px !important; }
 
 /* Page header */
-.dp-header { padding-bottom: 0.75rem; border-bottom: 3px solid #3b6cf7; margin-bottom: 1.5rem; }
+.dp-header { padding-bottom: 0.75rem; border-bottom: 3px solid #2563eb; margin-bottom: 1.5rem; }
 .dp-header h1 { font-size: 1.75rem !important; color: #1a2744 !important; margin-bottom: 0.1rem !important; }
 .dp-subtitle { color: #64748b; font-size: 0.92rem; margin: 0; }
 
 /* Status cards */
 .dp-safety { background: #fffbeb; border: 1.5px solid #f59e0b; border-left: 5px solid #f59e0b; border-radius: 8px; padding: 0.8rem 1rem; margin-bottom: 1.25rem; color: #78350f; font-size: 0.87rem; line-height: 1.55; }
-.dp-notice { background: #eff6ff; border: 1px solid #bfdbfe; border-left: 4px solid #3b6cf7; border-radius: 8px; padding: 0.8rem 1rem; margin-bottom: 1rem; color: #1e3a5f; font-size: 0.87rem; line-height: 1.55; }
+.dp-notice { background: #eff6ff; border: 1px solid #bfdbfe; border-left: 4px solid #2563eb; border-radius: 8px; padding: 0.8rem 1rem; margin-bottom: 1rem; color: #1e3a5f; font-size: 0.87rem; line-height: 1.55; }
 .dp-success { background: #f0fdf4; border: 1px solid #bbf7d0; border-left: 4px solid #16a34a; border-radius: 8px; padding: 0.8rem 1rem; margin-bottom: 1rem; color: #14532d; font-size: 0.87rem; line-height: 1.55; }
 .dp-error { background: #fef2f2; border: 1px solid #fecaca; border-left: 4px solid #dc2626; border-radius: 8px; padding: 0.8rem 1rem; margin-bottom: 1rem; color: #7f1d1d; font-size: 0.87rem; line-height: 1.55; }
 

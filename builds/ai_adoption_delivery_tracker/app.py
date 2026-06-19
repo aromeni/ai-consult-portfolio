@@ -125,13 +125,25 @@ def apply_styles() -> None:
         }
 
         [data-testid="stSidebar"] {
-            border-right: 1px solid var(--line);
-            background: #f7f9f8;
+            background: #1a2744 !important;
         }
 
         [data-testid="stSidebar"] .block-container {
             padding-top: 1.5rem;
         }
+
+        section[data-testid="stSidebar"] p,
+        section[data-testid="stSidebar"] span,
+        section[data-testid="stSidebar"] label,
+        section[data-testid="stSidebar"] div { color: #cbd5e1 !important; }
+        section[data-testid="stSidebar"] strong,
+        section[data-testid="stSidebar"] b { color: #f1f5f9 !important; }
+        section[data-testid="stSidebar"] h1,
+        section[data-testid="stSidebar"] h2,
+        section[data-testid="stSidebar"] h3 { color: #f1f5f9 !important; }
+        section[data-testid="stSidebar"] hr { border-color: #334155 !important; }
+        section[data-testid="stSidebar"] .stRadio label { color: #e2e8f0 !important; }
+        section[data-testid="stSidebar"] [data-testid="stCaption"] { color: #94a3b8 !important; }
 
         h1, h2, h3 {
             color: var(--ink);

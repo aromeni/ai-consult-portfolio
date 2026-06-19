@@ -1146,7 +1146,7 @@ elif page == "Staff Handout":
             st.markdown("#### Human Review Checklist")
             st.markdown("Before using any AI output, check:")
             for item in handout.get("human_review_checklist", []):
-                st.markdown(f"- ☐ {item}")
+                st.markdown(f"- {item}")
 
             st.markdown("---")
             st.markdown("#### Escalation Guidance")
@@ -1529,7 +1529,7 @@ elif page == "Training Pack Export":
             st.markdown("#### Facilitator Review Checklist")
             st.markdown("Before delivering this training pack, confirm:")
             for item in tp.generate_facilitator_review_checklist():
-                st.markdown(f"- ☐ {item}")
+                st.markdown(f"- {item}")
 
             st.markdown("---")
             st.markdown("#### Recommended Next Steps")

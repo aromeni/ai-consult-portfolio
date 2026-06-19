@@ -7,16 +7,16 @@ import streamlit as st
 # ── Legacy Phase 1 helpers ────────────────────────────────────────────────────
 
 RISK_COLOURS = {
-    "Low": "🟢",
-    "Medium": "🟡",
-    "High": "🔴",
-    "Critical": "⛔",
+    "Low": "Low",
+    "Medium": "Medium",
+    "High": "High",
+    "Critical": "Critical",
 }
 
 SUITABILITY_LABELS = {
-    True: "✅ Suitable",
-    False: "❌ Not suitable",
-    None: "⚠️ Borderline",
+    True: "Suitable",
+    False: "Not suitable",
+    None: "Borderline",
 }
 
 
@@ -85,11 +85,17 @@ _CSS = """
 /* ── Layout ── */
 .main .block-container { padding-top: 1.5rem; padding-bottom: 3rem; }
 
-/* ── Sidebar ── */
-[data-testid="stSidebar"] {
-    background-color: #f8fafc;
-    border-right: 1px solid #e2e8f0;
-}
+/* ── Sidebar (dark navy) ── */
+section[data-testid="stSidebar"] { background: #1a2744 !important; }
+section[data-testid="stSidebar"] p,
+section[data-testid="stSidebar"] span,
+section[data-testid="stSidebar"] label,
+section[data-testid="stSidebar"] div { color: #cbd5e1 !important; }
+section[data-testid="stSidebar"] strong,
+section[data-testid="stSidebar"] b { color: #f1f5f9 !important; }
+section[data-testid="stSidebar"] hr { border-color: #334155 !important; }
+section[data-testid="stSidebar"] .stRadio label { color: #e2e8f0 !important; font-size: 0.88rem !important; }
+section[data-testid="stSidebar"] [data-testid="stCaption"] { color: #94a3b8 !important; font-size: 0.75rem !important; }
 
 /* ── Metric cards ── */
 [data-testid="metric-container"] {
@@ -212,7 +218,7 @@ _CSS = """
     border: 1px solid #e2e8f0;
     border-radius: 10px;
 }
-.score-hero .sh-num { font-size: 2.4rem; font-weight: 700; color: #1e3a5f; line-height: 1; }
+.score-hero .sh-num { font-size: 2.4rem; font-weight: 700; color: #2563eb; line-height: 1; }
 .score-hero .sh-max { font-size: 1.1rem; color: #718096; }
 .score-hero .sh-label { font-size: 0.82rem; color: #718096; margin-top: 0.3rem; }
 
@@ -353,13 +359,13 @@ def render_page_header(title: str, subtitle: str = None) -> None:
 
 
 def render_safety_notice(text: str) -> None:
-    st.markdown(f'<div class="bp-safety">⚠️ {text}</div>', unsafe_allow_html=True)
+    st.markdown(f'<div class="bp-safety">{text}</div>', unsafe_allow_html=True)
 
 
 def render_responsible_use() -> None:
     st.markdown(
         '<div class="bp-ru-notice">'
-        "⚠️ <strong>Responsible use reminder:</strong> "
+        "<strong>Responsible use reminder:</strong> "
         "This tool provides indicative assessment guidance only. It is not legal, "
         "compliance, safeguarding, HR, or financial advice. All sample data is synthetic. "
         "No real personal or confidential data should be entered. "

@@ -36,7 +36,7 @@ section[data-testid="stSidebar"] [data-testid="stCaption"] {
 section[data-testid="stSidebar"] hr { border-color: #334155 !important; }
 
 /* ── Native metric value/label ── */
-[data-testid="stMetricValue"] { color: #1a2744 !important; font-weight: 800 !important; }
+[data-testid="stMetricValue"] { color: #2563eb !important; font-weight: 800 !important; }
 [data-testid="stMetricLabel"] { color: #64748b !important; font-size: 0.8rem !important; }
 
 /* ── Buttons ── */
@@ -369,7 +369,7 @@ def evidence_card(result: dict):
     st.markdown(
         f'<div class="dp-evidence">'
         f'<div class="dp-ev-meta">'
-        f'<span class="dp-ev-doc">📄 {doc}</span>'
+        f'<span class="dp-ev-doc">{doc}</span>'
         f'<span class="dp-ev-sep">·</span>'
         f"<span>Line {line}</span>"
         f'<span class="dp-ev-sep">·</span>'
@@ -418,10 +418,10 @@ def safeguard_list(items: list):
 def feature_cards():
     """Render the 4 feature cards on the Home page using native Streamlit columns."""
     features = [
-        ("📋", "Browse & Inspect", "Document library with word count, line count, and file size for each synthetic policy document."),
-        ("🔍", "Search & Extract", "Multi-term keyword search across all documents, plus topic-based evidence extraction for 13 policy topics."),
-        ("📊", "Analyse & Summarise", "Deterministic risk and safeguard summary — one risk record per topic, with coverage notes and suggested owners."),
-        ("📝", "Brief & Q&A", "9-section downloadable Markdown brief and evidence-based Q&A with topic detection, templated answers, and limitations."),
+        ("01", "Browse & Inspect", "Document library with word count, line count, and file size for each synthetic policy document."),
+        ("02", "Search & Extract", "Multi-term keyword search across all documents, plus topic-based evidence extraction for 13 policy topics."),
+        ("03", "Analyse & Summarise", "Deterministic risk and safeguard summary — one risk record per topic, with coverage notes and suggested owners."),
+        ("04", "Brief & Q&A", "9-section downloadable Markdown brief and evidence-based Q&A with topic detection, templated answers, and limitations."),
     ]
     cols = st.columns(4, gap="small")
     for col, (icon, title, body) in zip(cols, features):

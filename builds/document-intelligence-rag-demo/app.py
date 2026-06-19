@@ -136,7 +136,7 @@ if page == "Home":
     for _name in doc_names:
         _m = get_document_metadata(str(DOCS_DIR / _name))
         st.markdown(
-            f"📄 `{_name}` &nbsp;—&nbsp; {_m.get('word_count', '?')} words, "
+            f"`{_name}` &nbsp;—&nbsp; {_m.get('word_count', '?')} words, "
             f"{_m.get('line_count', '?')} lines",
         )
 
@@ -176,7 +176,7 @@ elif page == "Document Library":
 
     for name in doc_names:
         meta = get_document_metadata(str(DOCS_DIR / name))
-        with st.expander(f"📄 {name}"):
+        with st.expander(f"{name}"):
             col1, col2, col3 = st.columns(3)
             col1.metric("Words", meta.get("word_count", "—"))
             col2.metric("Lines", meta.get("line_count", "—"))
@@ -342,7 +342,7 @@ elif page == "Policy Q&A":
     )
     ui.safety_warning()
 
-    _tab_ks, _tab_qa = st.tabs(["🔍  Keyword Search", "💬  Evidence-Based Q&A"])
+    _tab_ks, _tab_qa = st.tabs(["Keyword Search", "Evidence-Based Q&A"])
 
     # ── Tab 1: Keyword Search ─────────────────────────────────────────────────
     with _tab_ks:

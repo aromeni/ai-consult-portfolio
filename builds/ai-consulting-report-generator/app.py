@@ -488,7 +488,7 @@ elif page == "Report Sections":
     _check_cols = st.columns(len(_source_available))
     for _col, (key, available) in zip(_check_cols, _source_available.items()):
         with _col:
-            _icon = "✅" if available else "⬜"
+            _icon = "Yes" if available else "-"
             _label = key.replace("_", " ").title()
             st.markdown(
                 f'<div style="text-align:center;padding:0.5rem;background:#f8fafc;'
@@ -1155,7 +1155,7 @@ elif page == "Client Report":
     for _i, (key, label) in enumerate(_source_keys.items()):
         _available = st.session_state.get(key) is not None
         with _check_cols[_i % 4]:
-            _icon = "✅" if _available else "⬜"
+            _icon = "Yes" if _available else "-"
             st.markdown(
                 f'<div style="text-align:center;padding:0.5rem;background:#f8fafc;'
                 f'border-radius:8px;font-size:0.78rem;margin-bottom:0.5rem;">'
@@ -1312,7 +1312,7 @@ elif page == "Export Centre":
     _q_cols = st.columns(3)
     for _qi, _check in enumerate(_quality):
         with _q_cols[_qi % 3]:
-            _icon = "✅" if _check["passed"] else "⬜"
+            _icon = "Yes" if _check["passed"] else "No"
             st.markdown(f"{_icon} {_check['item']}")
 
     if _ex_readiness["recommended_next_steps"]:
@@ -1328,7 +1328,7 @@ elif page == "Export Centre":
     with _an_cols[0]:
         st.markdown("**Report Output Completion**")
         for output, done in (_analytics.get("completion_status") or {}).items():
-            st.markdown(f"{'✅' if done else '⬜'} {output}")
+            st.markdown(f"- {output}")
 
     with _an_cols[1]:
         st.markdown("**Readiness Scores**")

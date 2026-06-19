@@ -508,7 +508,7 @@ def format_completion_review_as_markdown(review: dict) -> str:
     ]
 
     for phase in phases:
-        mark = "✅" if phase.get("status") == "Complete" else "❌"
+        mark = "Done" if phase.get("status") == "Complete" else "Pending"
         lines.append(f"### {mark} {phase['phase']}: {phase['name']}")
         lines.append("")
         lines.append(f"**Purpose:** {phase['purpose']}")
@@ -530,12 +530,12 @@ def format_completion_review_as_markdown(review: dict) -> str:
         "",
     ]
     for item in outputs.get("available_outputs", []):
-        lines.append(f"- ✅ {item['label']} ({item['importance']})")
+        lines.append(f"- [Done] {item['label']} ({item['importance']})")
     lines.append("")
     lines.append("**Missing outputs:**")
     lines.append("")
     for item in outputs.get("missing_outputs", []):
-        lines.append(f"- ❌ {item['label']} ({item['importance']})")
+        lines.append(f"- [Pending] {item['label']} ({item['importance']})")
     lines.append("")
 
     lines += [
@@ -550,12 +550,12 @@ def format_completion_review_as_markdown(review: dict) -> str:
         "",
     ]
     for doc in docs.get("existing_files", []):
-        lines.append(f"- ✅ {doc['label']} ({doc['path']})")
+        lines.append(f"- [Present] {doc['label']} ({doc['path']})")
     lines.append("")
     lines.append("**Missing:**")
     lines.append("")
     for doc in docs.get("missing_files", []):
-        lines.append(f"- ❌ {doc['label']} ({doc['path']})")
+        lines.append(f"- [Missing] {doc['label']} ({doc['path']})")
     lines.append("")
 
     lines += [
