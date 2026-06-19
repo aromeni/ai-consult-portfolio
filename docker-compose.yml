@@ -1,0 +1,100 @@
+services:
+
+  build-1:
+    build:
+      context: .
+      args:
+        BUILD_DIR: builds/brightpath-ai-readiness-tool
+        PORT: "8501"
+    container_name: rac-build-1
+    ports:
+      - "8501:8501"
+    restart: unless-stopped
+
+  build-2:
+    build:
+      context: .
+      args:
+        BUILD_DIR: builds/document-intelligence-rag-demo
+        PORT: "8502"
+    container_name: rac-build-2
+    ports:
+      - "8502:8502"
+    restart: unless-stopped
+
+  build-3:
+    build:
+      context: .
+      args:
+        BUILD_DIR: builds/semantic-rag-policy-assistant
+        PORT: "8503"
+    container_name: rac-build-3
+    ports:
+      - "8503:8503"
+    restart: unless-stopped
+
+  build-4:
+    build:
+      context: .
+      args:
+        BUILD_DIR: builds/ai-staff-training-workshop-generator
+        PORT: "8504"
+    container_name: rac-build-4
+    ports:
+      - "8504:8504"
+    restart: unless-stopped
+
+  build-5:
+    build:
+      context: .
+      args:
+        BUILD_DIR: builds/ai-consulting-report-generator
+        PORT: "8505"
+    container_name: rac-build-5
+    ports:
+      - "8505:8505"
+    restart: unless-stopped
+
+  build-6:
+    build:
+      context: .
+      args:
+        BUILD_DIR: builds/ai-governance-policy-checker
+        PORT: "8506"
+    container_name: rac-build-6
+    ports:
+      - "8506:8506"
+    restart: unless-stopped
+
+  build-7:
+    build:
+      context: .
+      args:
+        BUILD_DIR: builds/ai_adoption_roi_impact_tracker
+        PORT: "8507"
+    container_name: rac-build-7
+    ports:
+      - "8507:8507"
+    restart: unless-stopped
+
+  build-8:
+    build:
+      context: .
+      args:
+        BUILD_DIR: builds/ai_adoption_delivery_tracker
+        PORT: "8508"
+    container_name: rac-build-8
+    ports:
+      - "8508:8508"
+    restart: unless-stopped
+
+  build-9:
+    build:
+      context: .
+      args:
+        BUILD_DIR: builds/ai_adoption_consulting_capstone
+        PORT: "8509"
+    container_name: rac-build-9
+    ports:
+      - "8509:8509"
+    restart: unless-stopped

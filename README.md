@@ -24,19 +24,50 @@ Each build maps to a distinct phase of an AI adoption consulting engagement. Tog
 
 ---
 
-## Quick Start — Run All Nine Builds
+## Quick Start
+
+### Option A — Docker (recommended, no Python setup required)
+
+Requires [Docker Desktop](https://www.docker.com/products/docker-desktop/).
 
 ```bash
 git clone https://github.com/aromeni/ai-consult-portfolio
 cd ai-consult-portfolio
-bash launch_all.sh
+docker compose up
 ```
 
-Open **http://localhost:8509** — the capstone dashboard — as the entry point. All other builds run simultaneously on ports 8501–8508.
+First run builds all nine images — allow 5–10 minutes. Subsequent starts are instant.
+
+Open **http://localhost:8509** — the capstone dashboard — as the entry point.
+
+Stop everything:
+
+```bash
+docker compose down
+```
 
 ---
 
-## Run a Single Build
+### Option B — Run without Docker
+
+Requires Python 3.11+ and pip.
+
+```bash
+git clone https://github.com/aromeni/ai-consult-portfolio
+cd ai-consult-portfolio
+for req in builds/*/requirements.txt; do pip install -r "$req" -q; done
+bash launch_all.sh
+```
+
+Stop everything:
+
+```bash
+bash launch_all.sh stop
+```
+
+---
+
+### Run a single build (no Docker)
 
 ```bash
 cd builds/<build-folder>
