@@ -76,20 +76,38 @@ Allow 8–12 minutes for a business audience. See `portfolio_notes/build_9_demo_
 
 ## Screenshots
 
-Screenshots should be captured manually from the Streamlit app and saved in the `screenshots/` folder using the filenames listed below.
+**1 — Capstone Client Setup**
+![Capstone Client Setup — synthetic client table, journey stages, and portfolio indicators](assets/screenshots/01-capstone-client-setup.png)
 
-| File | Page | What It Shows |
-|---|---|---|
-| `01-capstone-client-setup.png` | 1 — Capstone Client Setup | Synthetic client table, journey stages, and portfolio indicators |
-| `02-client-journey-overview.png` | 2 — Client Journey Overview | Journey health classification and prioritised review table |
-| `03-cross-build-insight-aggregator.png` | 3 — Cross-Build Insight Aggregator | Build-area evidence health and client-build status matrix |
-| `04-consulting-recommendation-pathway.png` | 4 — Consulting Recommendation Pathway | Capstone readiness and commercial next step per client |
-| `05-capstone-dashboard.png` | 5 — Capstone Dashboard | Unified dashboard with Client Spotlight |
-| `06-capstone-report-builder.png` | 6 — Capstone Report Builder | Rendered Markdown consulting report |
-| `07-export-centre.png` | 7 — Export Centre | Download buttons for all five export formats |
-| `08-final-review-commercial-positioning.png` | 8 — Final Review | Completion status and limitations |
+**2 — Client Journey Overview**
+![Client Journey Overview — journey health classification and prioritised review table](assets/screenshots/02-client-journey-overview.png)
 
-See `screenshots/README.md` for detailed capture instructions per screenshot.
+**3 — Cross-Build Insight Aggregator**
+![Cross-Build Insight Aggregator — build-area evidence health and client-build status matrix](assets/screenshots/03-cross-build-insight-aggregator.png)
+
+**4 — Consulting Recommendation Pathway**
+![Consulting Recommendation Pathway — capstone readiness and commercial next step per client](assets/screenshots/04-consulting-recommendation-pathway.png)
+
+**5 — Capstone Dashboard**
+![Capstone Dashboard — unified dashboard with Client Spotlight](assets/screenshots/05-capstone-dashboard.png)
+
+**6 — Capstone Report Builder**
+![Capstone Report Builder — rendered Markdown consulting report](assets/screenshots/06-capstone-report-builder.png)
+
+**7 — Export Centre**
+![Export Centre — download buttons for all five export formats](assets/screenshots/07-export-centre.png)
+
+**8 — Final Review and Commercial Positioning**
+![Final Review — completion status and limitations](assets/screenshots/08-final-review-commercial-positioning.png)
+
+**9 — Sidebar Navigation**
+![Sidebar Navigation — dark navy sidebar with all eight phase pages](assets/screenshots/09-sidebar-navigation.png)
+
+**10 — CSV and JSON Evidence Export**
+![CSV and JSON Evidence Export — raw evidence pack downloads](assets/screenshots/10-csv-json-evidence-export.png)
+
+**12 — PDF Report**
+![PDF Report — formatted consulting report exported to PDF](assets/screenshots/12-pdf-report.png)
 
 ---
 
@@ -186,8 +204,8 @@ ai_adoption_consulting_capstone/
 │   ├── test_capstone_dashboard.py
 │   ├── test_capstone_report.py
 │   └── test_export_centre.py
-├── screenshots/
-│   └── README.md
+├── assets/
+│   └── screenshots/
 └── portfolio_notes/
     ├── README.md
     ├── build_9_phase_1_notes.md
