@@ -1,14 +1,16 @@
-# BrightPath Document Intelligence / RAG Demo
+# Build 2 — Document Intelligence: Keyword Search and Evidence Extraction
 
-**A Streamlit prototype for deterministic document intelligence using synthetic policy documents.**
+**A Streamlit prototype for transparent, keyword-based document intelligence using synthetic policy documents.**
 
 Build 2 of the ChatGPT Mastery / GPT Master project.
+
+> **Note on naming:** This build was originally titled "RAG Demo." It is not a RAG system. It uses deterministic keyword matching and topic detection — no chunking, no embeddings, no vector retrieval. It is the **pre-RAG foundation layer**: the transparent, auditable starting point before vector search is added. For the full RAG pipeline implementation, see [Build 10 — Production-Style Document Intelligence RAG Agent](../production_document_intelligence_rag_agent/).
 
 ---
 
 ## One-Line Summary
 
-A working document intelligence tool that searches, extracts evidence from, and generates risk summaries and Q&A answers from synthetic policy documents — without external AI APIs, embeddings, or a vector database.
+A working document intelligence tool that searches, extracts evidence from, and generates risk summaries and Q&A answers from synthetic policy documents — using deterministic keyword matching only, with no external AI APIs, no embeddings, and no vector database.
 
 ---
 
@@ -287,10 +289,12 @@ Capture scenarios are listed in [`docs/screenshots-checklist.md`](docs/screensho
 
 - Document search is keyword-based — no semantic understanding
 - No document upload — documents must be placed in `data/synthetic_documents/` manually
-- No embeddings or vector store — full RAG capability is a future phase
+- No chunking, no embeddings, no vector store — this is the pre-RAG foundation layer
 - Topic detection uses keyword/co-detection matching — not NLP or intent inference
 - Session data is lost when the app restarts — no persistent storage
 - Single-session use — designed for one user at a time
+
+The RAG pipeline (chunking, TF-IDF embeddings, cosine similarity retrieval, hit-rate evaluation) is implemented in [Build 10](../production_document_intelligence_rag_agent/).
 
 ---
 
@@ -298,24 +302,38 @@ Capture scenarios are listed in [`docs/screenshots-checklist.md`](docs/screensho
 
 **Short-term:** Screenshots, UI polish, PDF export for mini briefs.
 
-**Medium-term:** Document upload UI for synthetic/approved files, semantic search with local embeddings, section-level references.
+**Medium-term:** Document upload UI for synthetic/approved files, section-level references.
 
-**Long-term:** LLM-assisted Q&A with strict evidence grounding, RAG with embeddings and vector database, policy gap analysis, secure deployment.
+**The RAG upgrade path** (chunking → embeddings → vector retrieval → LLM generation) has been implemented as a separate, standalone build. See [Build 10 — Production-Style Document Intelligence RAG Agent](../production_document_intelligence_rag_agent/).
 
 See [docs/future-improvements.md](docs/future-improvements.md) for the full list.
 
 ---
 
-## Relationship to Build 1 and Layer 5
+## Relationship to Other Builds
 
-**Build 1** ([`brightpath-ai-readiness-tool/`](../brightpath-ai-readiness-tool/)) assessed an organisation's AI readiness through a questionnaire. Build 2 applies document intelligence to the policies that govern AI use — showing what evidence-based document analysis looks like in practice.
+**Build 1** ([`brightpath-ai-readiness-tool/`](../brightpath-ai-readiness-tool/)) assessed an organisation's AI readiness through a questionnaire. Build 2 applies document intelligence to the policies that govern AI use — showing what keyword-based document analysis looks like in practice.
+
+**Build 10** ([`production_document_intelligence_rag_agent/`](../production_document_intelligence_rag_agent/)) is the direct technical progression from this build. It implements the full RAG pipeline — chunking, TF-IDF embeddings, cosine similarity retrieval, hit-rate evaluation, and exportable reports — using the same consulting context and synthetic document approach.
+
+| | Build 2 (this build) | Build 10 |
+|---|---|---|
+| Search method | Keyword matching | TF-IDF cosine similarity |
+| Chunking | No | Yes — 200-word overlapping chunks |
+| Embeddings | No | Yes — TF-IDF index |
+| Similarity scores | No | Yes — per-chunk scores |
+| Evaluation | No | Yes — hit-rate against 10 questions |
+| Risk and brief outputs | Yes | No |
+| Teaching focus | Evidence extraction workflow | RAG pipeline mechanics |
+
+Build 2 is the foundation. Build 10 is what the foundation enables.
 
 **Layer 5 — Document Intelligence Agent** of the ChatGPT Mastery project covers:
 - Document classification and RAG-readiness concepts
 - Keyword-to-embedding progression
 - Safe use boundaries for document AI
 
-Build 2 demonstrates these concepts as a working, testable prototype before embeddings are added.
+Build 2 demonstrates the keyword layer of this progression. Build 10 demonstrates the embedding and retrieval layer.
 
 ---
 
