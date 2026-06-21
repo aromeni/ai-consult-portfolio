@@ -162,6 +162,8 @@ pytest
 
 Run from the `production_ai_document_intelligence_governance_agent/` directory.
 
+For a plain-English walkthrough of how to run, understand, and demo the app, see [portfolio_notes/how-to-run-and-demo.md](portfolio_notes/how-to-run-and-demo.md).
+
 ---
 
 ## 11. Sample Documents
