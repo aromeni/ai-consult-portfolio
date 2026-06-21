@@ -98,3 +98,14 @@ services:
     ports:
       - "8509:8509"
     restart: unless-stopped
+
+  build-10:
+    build:
+      context: .
+      args:
+        BUILD_DIR: builds/production_ai_document_intelligence_governance_agent
+        PORT: "8510"
+    container_name: rac-build-10
+    ports:
+      - "8510:8510"
+    restart: unless-stopped

@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Launch all 9 portfolio builds on separate ports.
+# Launch all 10 portfolio builds on separate ports.
 # Usage:    bash launch_all.sh
 # Stop all: bash launch_all.sh stop
 
@@ -63,6 +63,7 @@ launch 8506 "ai-governance-policy-checker"           "Build 6 — AI Governance 
 launch 8507 "ai_adoption_roi_impact_tracker"         "Build 7 — AI Adoption ROI and Impact Tracker"
 launch 8508 "ai_adoption_delivery_tracker"           "Build 8 — AI Adoption Delivery and Implementation Tracker"
 launch 8509 "ai_adoption_consulting_capstone"        "Build 9 — AI Adoption Consulting Capstone Dashboard"
+launch 8510 "production_ai_document_intelligence_governance_agent" "Build 10 — AI Document Intelligence & Governance Agent"
 
 echo ""
 echo "All builds launched. Open these URLs:"
@@ -76,8 +77,10 @@ echo "  http://localhost:8506  —  Build 6 — AI Governance Policy Checker"
 echo "  http://localhost:8507  —  Build 7 — AI Adoption ROI and Impact Tracker"
 echo "  http://localhost:8508  —  Build 8 — AI Adoption Delivery and Implementation Tracker"
 echo "  http://localhost:8509  —  Build 9 — AI Adoption Consulting Capstone Dashboard"
+echo "  http://localhost:8510  —  Build 10 — AI Document Intelligence & Governance Agent"
 echo ""
 echo "  Recommended entry point: http://localhost:8509"
+echo "  Technical deep-dive:     http://localhost:8510"
 echo ""
 echo "  To stop all:  bash launch_all.sh stop"
 echo "  Logs:         .build_<port>.log"

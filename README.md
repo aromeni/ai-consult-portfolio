@@ -1,6 +1,6 @@
 # Rashid AI Consult — AI Adoption Consulting Portfolio
 
-A nine-build software portfolio demonstrating a complete, structured AI adoption consulting methodology — from initial readiness diagnosis through to tracked implementation delivery and client-facing reporting.
+A ten-build software portfolio demonstrating a complete, structured AI adoption consulting methodology — from initial readiness diagnosis through to tracked implementation delivery and client-facing reporting.
 
 Built by **Rashid Omeni**, AI adoption consultant at **Rashid AI Consult**.
 
@@ -21,6 +21,7 @@ Each build maps to a distinct phase of an AI adoption consulting engagement. Tog
 | [Build 7](builds/ai_adoption_roi_impact_tracker/) | AI Adoption ROI and Impact Tracker | Impact — measure time savings, adoption decisions, and workflow evidence |
 | [Build 8](builds/ai_adoption_delivery_tracker/) | AI Adoption Delivery and Implementation Tracker | Delivery — track implementation actions, blockers, and governance sign-off |
 | [Build 9](builds/ai_adoption_consulting_capstone/) | AI Adoption Consulting Capstone Dashboard | Capstone — connect all eight phases into one portfolio evidence view |
+| [Build 10](builds/production_ai_document_intelligence_governance_agent/) | AI Document Intelligence & Governance Agent | Flagship technical build — semantic RAG, governance checks, report generation, 386-test suite |
 
 ---
 
@@ -36,7 +37,7 @@ cd ai-consult-portfolio
 docker compose up
 ```
 
-First run builds all nine images — allow 5–10 minutes. Subsequent starts are instant.
+First run builds all ten images — allow 5–10 minutes. Subsequent starts are instant.
 
 Open **http://localhost:8509** — the capstone dashboard — as the entry point.
 
@@ -90,6 +91,7 @@ streamlit run app.py
 | 8507 | Build 7 — AI Adoption ROI and Impact Tracker |
 | 8508 | Build 8 — AI Adoption Delivery and Implementation Tracker |
 | 8509 | Build 9 — AI Adoption Consulting Capstone Dashboard |
+| 8510 | Build 10 — AI Document Intelligence & Governance Agent |
 
 ---
 
@@ -101,7 +103,7 @@ Each build has its own pytest suite. From any build directory:
 pytest
 ```
 
-Build 9 alone has 172 tests, all passing.
+Build 9 alone has 172 tests, all passing. Build 10 has 386 tests, all passing.
 
 ---
 
@@ -120,13 +122,15 @@ The consulting service works with any UK organisation using or considering AI to
 
 ## Technical Notes
 
-**Stack:** Python · Streamlit · pytest · reportlab · matplotlib
+**Stack:** Python · Streamlit · sentence-transformers · FAISS · pandas · numpy · pytest · reportlab · matplotlib
 
-**Data:** All nine builds use synthetic demonstration data only. No real client data, personal data, or learner records are used anywhere in this portfolio.
+**Data:** All ten builds use synthetic demonstration data only. No real client data, personal data, or learner records are used anywhere in this portfolio.
 
 **Architecture:** Each build is an independent Streamlit application with its own `requirements.txt`, `logic/` module layer, `data/` layer, and `tests/` suite. No shared dependencies between builds.
 
-**External APIs:** None. All logic is deterministic Python. No OpenAI, Claude, LangChain, or LlamaIndex calls are made by any build. This keeps the portfolio safe to demonstrate publicly and removes any API key dependency.
+**External APIs:** None by default. Builds 1–9 are fully offline. Build 10 uses sentence-transformers (all-MiniLM-L6-v2, ~90MB, downloaded once and cached locally on first run) and FAISS for local semantic retrieval — no API key required. An optional OpenAI integration path is documented in Build 10's `.env.example` but is not called in the default mode.
+
+**Build 10 note:** Build 10 is a production-style local Streamlit prototype demonstrating semantic document retrieval, evidence-based Q&A with citations, governance risk checks, structured report generation, and a 386-test suite. It is not a deployed SaaS product.
 
 **Language:** British English throughout.
 
@@ -135,6 +139,8 @@ The consulting service works with any UK organisation using or considering AI to
 ## Suggested Demo Flow
 
 Start at **http://localhost:8509** (Build 9 — Capstone Dashboard) and follow the eight-phase navigation. Dip into individual builds on the other ports to show the underlying tools in detail.
+
+For a deep technical walkthrough, go to **http://localhost:8510** (Build 10 — AI Document Intelligence & Governance Agent). Load the embedding model, build the FAISS index, run a policy query, review the governance risk flags, and export a structured Markdown report.
 
 For a guided walkthrough, timing guide, and audience-specific talking points, see the demo script in the full consulting portfolio.
 
