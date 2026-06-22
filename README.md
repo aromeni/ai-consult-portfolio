@@ -1,8 +1,8 @@
-# Rashid AI Consult — AI Adoption Consulting Portfolio
+# AI Consult — AI Adoption Consulting Portfolio
 
 A ten-build software portfolio demonstrating a complete, structured AI adoption consulting methodology — from initial readiness diagnosis through to tracked implementation delivery and client-facing reporting.
 
-Built by **Rashid Omeni**, AI adoption consultant at **Rashid AI Consult**.
+Built by  **Abdul Rashid Omeni**, AI adoption consultant at  **AI Consult**.
 
 ---
 
@@ -10,18 +10,18 @@ Built by **Rashid Omeni**, AI adoption consultant at **Rashid AI Consult**.
 
 Each build maps to a distinct phase of an AI adoption consulting engagement. Together they cover the full journey a client organisation goes through when adopting AI responsibly:
 
-| Build | Tool | Consulting Phase |
-|---|---|---|
-| [Build 1](builds/brightpath-ai-readiness-tool/) | AI Readiness + Workflow Audit Tool | Discovery — identify safe AI opportunities and hard exclusions |
-| [Build 2](builds/document-intelligence-rag-demo/) | Document Intelligence / RAG Demo | Document capability — index and retrieve over client document collections |
-| [Build 3](builds/semantic-rag-policy-assistant/) | Semantic RAG Policy Assistant | Knowledge retrieval — semantic search over policy and guidance documents |
-| [Build 4](builds/ai-staff-training-workshop-generator/) | AI Staff Training + Workshop Generator | Training — design and deliver sector-specific staff AI training sessions |
-| [Build 5](builds/ai-consulting-report-generator/) | AI Consulting Report Generator | Reporting — produce structured client-facing consulting reports |
-| [Build 6](builds/ai-governance-policy-checker/) | AI Governance Policy Checker | Governance — review policy maturity and close responsible AI gaps |
-| [Build 7](builds/ai_adoption_roi_impact_tracker/) | AI Adoption ROI and Impact Tracker | Impact — measure time savings, adoption decisions, and workflow evidence |
-| [Build 8](builds/ai_adoption_delivery_tracker/) | AI Adoption Delivery and Implementation Tracker | Delivery — track implementation actions, blockers, and governance sign-off |
-| [Build 9](builds/ai_adoption_consulting_capstone/) | AI Adoption Consulting Capstone Dashboard | Capstone — connect all eight phases into one portfolio evidence view |
-| [Build 10](builds/production_ai_document_intelligence_governance_agent/) | AI Document Intelligence & Governance Agent | Flagship technical build — semantic RAG, governance checks, report generation, 386-test suite |
+| Build                                                                 | Tool                                            | Consulting Phase                                                                               |
+| --------------------------------------------------------------------- | ----------------------------------------------- | ---------------------------------------------------------------------------------------------- |
+| [Build 1](builds/brightpath-ai-readiness-tool/)                          | AI Readiness + Workflow Audit Tool              | Discovery — identify safe AI opportunities and hard exclusions                                |
+| [Build 2](builds/document-intelligence-rag-demo/)                        | Document Intelligence / RAG Demo                | Document capability — index and retrieve over client document collections                     |
+| [Build 3](builds/semantic-rag-policy-assistant/)                         | Semantic RAG Policy Assistant                   | Knowledge retrieval — semantic search over policy and guidance documents                      |
+| [Build 4](builds/ai-staff-training-workshop-generator/)                  | AI Staff Training + Workshop Generator          | Training — design and deliver sector-specific staff AI training sessions                      |
+| [Build 5](builds/ai-consulting-report-generator/)                        | AI Consulting Report Generator                  | Reporting — produce structured client-facing consulting reports                               |
+| [Build 6](builds/ai-governance-policy-checker/)                          | AI Governance Policy Checker                    | Governance — review policy maturity and close responsible AI gaps                             |
+| [Build 7](builds/ai_adoption_roi_impact_tracker/)                        | AI Adoption ROI and Impact Tracker              | Impact — measure time savings, adoption decisions, and workflow evidence                      |
+| [Build 8](builds/ai_adoption_delivery_tracker/)                          | AI Adoption Delivery and Implementation Tracker | Delivery — track implementation actions, blockers, and governance sign-off                    |
+| [Build 9](builds/ai_adoption_consulting_capstone/)                       | AI Adoption Consulting Capstone Dashboard       | Capstone — connect all eight phases into one portfolio evidence view                          |
+| [Build 10](builds/production_ai_document_intelligence_governance_agent/) | AI Document Intelligence & Governance Agent     | Flagship technical build — semantic RAG, governance checks, report generation, 386-test suite |
 
 ---
 
@@ -80,18 +80,18 @@ streamlit run app.py
 
 ## Port Reference
 
-| Port | Build |
-|---|---|
-| 8501 | Build 1 — AI Readiness + Workflow Audit Tool |
-| 8502 | Build 2 — Document Intelligence / RAG Demo |
-| 8503 | Build 3 — Semantic RAG Policy Assistant |
-| 8504 | Build 4 — AI Staff Training + Workshop Generator |
-| 8505 | Build 5 — AI Consulting Report Generator |
-| 8506 | Build 6 — AI Governance Policy Checker |
-| 8507 | Build 7 — AI Adoption ROI and Impact Tracker |
+| Port | Build                                                      |
+| ---- | ---------------------------------------------------------- |
+| 8501 | Build 1 — AI Readiness + Workflow Audit Tool              |
+| 8502 | Build 2 — Document Intelligence / RAG Demo                |
+| 8503 | Build 3 — Semantic RAG Policy Assistant                   |
+| 8504 | Build 4 — AI Staff Training + Workshop Generator          |
+| 8505 | Build 5 — AI Consulting Report Generator                  |
+| 8506 | Build 6 — AI Governance Policy Checker                    |
+| 8507 | Build 7 — AI Adoption ROI and Impact Tracker              |
 | 8508 | Build 8 — AI Adoption Delivery and Implementation Tracker |
-| 8509 | Build 9 — AI Adoption Consulting Capstone Dashboard |
-| 8510 | Build 10 — AI Document Intelligence & Governance Agent |
+| 8509 | Build 9 — AI Adoption Consulting Capstone Dashboard       |
+| 8510 | Build 10 — AI Document Intelligence & Governance Agent    |
 
 ---
 
